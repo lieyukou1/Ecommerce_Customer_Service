@@ -1,0 +1,166 @@
+flows:
+  system_task_started:
+    description: Flow for acknowledging that a new property-service task has started
+    name: task started acknowledgement
+    steps:
+      - id: start
+        type: start
+        next: acknowledge
+
+      - id: acknowledge
+        type: action
+        action: action_response
+        args:
+          mode: static
+          text: "好的，我们先处理{{ context.started_flow_name }}。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  system_task_resumed:
+    description: Flow for acknowledging that a paused property-service task has been resumed
+    name: task resumed acknowledgement
+    steps:
+      - id: start
+        type: start
+        next: acknowledge
+
+      - id: acknowledge
+        type: action
+        action: action_response
+        args:
+          mode: static
+          text: "好的，我们继续刚才的{{ context.resumed_flow_name }}。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  system_completed:
+    description: A flow has been completed and there is nothing else to be done
+    name: completion marker
+    steps:
+      - id: start
+        type: start
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  system_cannot_handle:
+    description: Flow for handling requests the property assistant cannot support yet
+    name: cannot handle request
+    steps:
+      - id: start
+        type: start
+        next:
+          - if: "context.get('reason') == 'clarification_rejected'"
+            then: clarification_rejected
+          - if: "context.get('reason') == 'not_supported'"
+            then: not_supported
+          - if: "context.get('reason') == 'no_relevant_answer'"
+            then: no_relevant_answer
+          - else: ask_rephrase
+
+      - id: clarification_rejected
+        type: action
+        action: action_response
+        args:
+          mode: static
+          text: "看起来我刚才理解偏了。你可以重新说一下，是想查工单、查服务项目，还是咨询物业规则。"
+        next: end
+
+      - id: not_supported
+        type: action
+        action: action_response
+        args:
+          mode: static
+          text: "我理解你的意思，不过这项物业能力目前还没正式接入。"
+        next: end
+
+      - id: no_relevant_answer
+        type: action
+        action: action_response
+        args:
+          mode: static
+          text: "我暂时没有查到合适的信息。你可以换个说法，或者告诉我更具体的工单、服务项目或规则名称。"
+        next: end
+
+      - id: ask_rephrase
+        type: action
+        action: action_response
+        args:
+          mode: static
+          text: "抱歉，我这边还没有完全听明白。你可以再具体说一下想处理哪类物业问题。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  system_collect_information:
+    description: Flow for asking the resident for a slot value during a collect step
+    name: collect information
+    steps:
+      - id: start
+        type: start
+        next: ask
+
+      - id: ask
+        type: action
+        action: action_response
+        args: context.response
+        next: listen
+
+      - id: listen
+        type: action
+        action: action_listen
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  system_task_interrupted:
+    description: Flow for acknowledging that the current property-service task has been interrupted
+    name: task interrupted acknowledgement
+    steps:
+      - id: start
+        type: start
+        next: acknowledge
+
+      - id: acknowledge
+        type: action
+        action: action_response
+        args:
+          mode: static
+          text: "好的，我们先把{{ context.interrupted_flow_name }}放一放，先处理{{ context.started_flow_name }}。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  system_task_canceled:
+    description: Flow for acknowledging that the current property-service task was canceled
+    name: task canceled acknowledgement
+    steps:
+      - id: start
+        type: start
+        next: acknowledge
+
+      - id: acknowledge
+        type: action
+        action: action_response
+        args:
+          mode: static
+          text: "好的，{{ context.canceled_flow_name }}先帮你取消。"
+        next: end
+
+      - id: end
+        type: end
+        next: []

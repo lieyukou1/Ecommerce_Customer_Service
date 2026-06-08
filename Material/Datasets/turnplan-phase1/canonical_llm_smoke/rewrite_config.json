@@ -1,0 +1,16 @@
+{
+  "split": "train",
+  "limit": 2,
+  "start_index": 0,
+  "model_strategy": "round_robin",
+  "routing_seed": 20260606,
+  "temperature": 0.9,
+  "timeout_seconds": 120,
+  "model_pool": [
+    {
+      "alias": "project_deepseek",
+      "model": "deepseek-v4-flash",
+      "base_url": "https://api.deepseek.com"
+    }
+  ]
+}

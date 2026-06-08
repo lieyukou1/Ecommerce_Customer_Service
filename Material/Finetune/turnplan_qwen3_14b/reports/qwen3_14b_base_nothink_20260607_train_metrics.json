@@ -1,0 +1,88 @@
+{
+  "total_records": 450,
+  "all_null_clarify_fallback_count": 6,
+  "effective_failure_records": 99,
+  "top_level_track_accuracy": 0.78,
+  "directive_accuracy": 1.0,
+  "all_null_accuracy": 0.2,
+  "knowledge_intent_accuracy": 0.98,
+  "task_command_family_accuracy": 0.625,
+  "flow_selection_accuracy": 0.6871508379888268,
+  "slot_fill_exact_match": 0.23529411764705882,
+  "json_valid_rate": 1.0,
+  "protocol_gate_pass_rate": 0.9311111111111111,
+  "adjusted_protocol_gate_pass_rate": 0.9444444444444444,
+  "knowledge_false_positive_rate": 0.20833333333333334,
+  "bucket_metrics": {
+    "active_task_slot_fill": {
+      "count": 50,
+      "track_accuracy": 0.8,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    },
+    "ambiguous_all_null": {
+      "count": 35,
+      "track_accuracy": 0.2,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 0.4857142857142857,
+      "effective_protocol_gate_pass_rate": 0.6571428571428571
+    },
+    "chitchat": {
+      "count": 40,
+      "track_accuracy": 0.875,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 0.975,
+      "effective_protocol_gate_pass_rate": 0.975
+    },
+    "directive_exit_runtime": {
+      "count": 35,
+      "track_accuracy": 1.0,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    },
+    "object_context_followup": {
+      "count": 45,
+      "track_accuracy": 0.9777777777777777,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    },
+    "service_item_knowledge": {
+      "count": 55,
+      "track_accuracy": 1.0,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    },
+    "task_interrupt_resume_cancel": {
+      "count": 45,
+      "track_accuracy": 0.7333333333333333,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 0.9777777777777777,
+      "effective_protocol_gate_pass_rate": 0.9777777777777777
+    },
+    "work_order_business_complaint": {
+      "count": 30,
+      "track_accuracy": 1.0,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    },
+    "work_order_business_urge": {
+      "count": 30,
+      "track_accuracy": 1.0,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    },
+    "work_order_read_only_task": {
+      "count": 85,
+      "track_accuracy": 0.49411764705882355,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 0.8705882352941177,
+      "effective_protocol_gate_pass_rate": 0.8705882352941177
+    }
+  }
+}

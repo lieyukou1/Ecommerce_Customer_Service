@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sgg.local/turnplan-phase1/canonical-record.schema.json",
+  "title": "TurnPlan Phase 1 Canonical Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "source", "bucket", "split", "input", "output", "meta"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "enum": ["repo-scenario", "hand-crafted", "history-backed"]
+    },
+    "bucket": {
+      "type": "string",
+      "enum": [
+        "chitchat",
+        "directive_exit_runtime",
+        "ambiguous_all_null",
+        "service_item_knowledge",
+        "work_order_read_only_task",
+        "work_order_business_urge",
+        "work_order_business_complaint",
+        "active_task_slot_fill",
+        "object_context_followup",
+        "task_interrupt_resume_cancel"
+      ]
+    },
+    "split": {
+      "type": "string",
+      "enum": ["train", "val"]
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "history",
+        "runtime_state",
+        "active_task",
+        "active_system_task",
+        "paused_tasks",
+        "focused_object",
+        "user_message"
+      ],
+      "properties": {
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "text"],
+            "properties": {
+              "role": {
+                "type": "string",
+                "enum": ["user", "assistant"]
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "runtime_state": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["conversation_state", "last_route", "last_task_outcome"],
+          "properties": {
+            "conversation_state": {
+              "type": "string"
+            },
+            "last_route": {
+              "type": ["object", "null"]
+            },
+            "last_task_outcome": {
+              "type": ["object", "null"]
+            }
+          }
+        },
+        "active_task": {
+          "type": ["object", "null"]
+        },
+        "active_system_task": {
+          "type": ["object", "null"]
+        },
+        "paused_tasks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "focused_object": {
+          "type": ["object", "null"]
+        },
+        "user_message": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task", "knowledge", "chitchat", "directive"],
+      "properties": {
+        "task": {
+          "type": ["object", "null"]
+        },
+        "knowledge": {
+          "type": ["object", "null"]
+        },
+        "chitchat": {
+          "type": ["object", "null"]
+        },
+        "directive": {
+          "type": ["object", "null"]
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["primary_track", "notes"],
+      "properties": {
+        "primary_track": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "semantic_meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "semantic_family": {
+          "type": "string"
+        },
+        "state_dependency": {
+          "type": "string"
+        },
+        "read_only_resolution_target": {
+          "type": ["string", "null"]
+        },
+        "contrast_group": {
+          "type": ["string", "null"]
+        },
+        "decision_basis": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "audit_meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "language_naturalness_checked": {
+          "type": "boolean"
+        },
+        "timeline_consistency_checked": {
+          "type": "boolean"
+        },
+        "state_alignment_checked": {
+          "type": "boolean"
+        },
+        "object_alignment_checked": {
+          "type": "boolean"
+        },
+        "slot_alignment_checked": {
+          "type": "boolean"
+        },
+        "passed_for_sft": {
+          "type": "boolean"
+        },
+        "audit_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

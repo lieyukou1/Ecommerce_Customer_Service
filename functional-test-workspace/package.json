@@ -1,0 +1,11 @@
+{
+  "name": "functional-test-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "precheck": "node ./scripts/cli.js precheck",
+    "run": "node ./scripts/cli.js run",
+    "run:breakpoint": "node ./scripts/cli.js run --breakpoint"
+  }
+}

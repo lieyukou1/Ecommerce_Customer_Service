@@ -1,0 +1,38 @@
+# round_02 Report Index
+
+## Runtime
+
+- [qwen3_14b_turnplan_round2_20260607b_val_metrics.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_val_metrics.json)
+- [qwen3_14b_turnplan_round2_20260607b_val_summary.md](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_val_summary.md)
+- [qwen3_14b_turnplan_round2_20260607b_val_predictions.jsonl](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_val_predictions.jsonl)
+- [qwen3_14b_turnplan_round2_20260607b_val_failure_summary.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_val_failure_summary.json)
+- [qwen3_14b_turnplan_round2_20260607b_train_metrics.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_train_metrics.json)
+- [qwen3_14b_turnplan_round2_20260607b_train_summary.md](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_train_summary.md)
+- [qwen3_14b_turnplan_round2_20260607b_train_predictions.jsonl](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_train_predictions.jsonl)
+
+## Base Re-run
+
+- [qwen3_14b_base_nothink_20260607_val_metrics.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_base_nothink_20260607_val_metrics.json)
+- [qwen3_14b_base_nothink_20260607_val_summary.md](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_base_nothink_20260607_val_summary.md)
+- [qwen3_14b_base_nothink_20260607_val_predictions.jsonl](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_base_nothink_20260607_val_predictions.jsonl)
+- [qwen3_14b_base_nothink_20260607_train_metrics.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_base_nothink_20260607_train_metrics.json)
+- [qwen3_14b_base_nothink_20260607_train_summary.md](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_base_nothink_20260607_train_summary.md)
+- [qwen3_14b_base_nothink_20260607_train_predictions.jsonl](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_base_nothink_20260607_train_predictions.jsonl)
+
+## Diagnostic
+
+- [qwen3_14b_round2_systemic_diagnostic.md](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_round2_systemic_diagnostic.md)
+- [qwen3_14b_round2_systemic_diagnostic_summary.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_round2_systemic_diagnostic_summary.json)
+- [qwen3_14b_round2_readonly_base_right_round2_wrong.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_round2_readonly_base_right_round2_wrong.json)
+
+## Smoke
+
+- [qwen3_14b_turnplan_round2_20260607b_smoke_results.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_smoke_results.json)
+- [qwen3_14b_turnplan_round2_20260607b_smoke_summary.md](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_smoke_summary.md)
+
+## Train Artifacts Snapshots
+
+- [qwen3_14b_turnplan_round2_20260607b_train_results.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_train_results.json)
+- [qwen3_14b_turnplan_round2_20260607b_eval_results.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_eval_results.json)
+- [qwen3_14b_turnplan_round2_20260607b_all_results.json](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_all_results.json)
+- [qwen3_14b_turnplan_round2_20260607b_train.log](/D:/Desktop/SGG_Project/Ecommerce_Customer_Service/Material/Finetune/turnplan_qwen3_14b/reports/qwen3_14b_turnplan_round2_20260607b_train.log)

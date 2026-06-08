@@ -1,0 +1,151 @@
+{
+  "total_records": 80,
+  "effective_failure_records": 18,
+  "effective_failure_rate": 0.225,
+  "bucket_counts": {
+    "chitchat": 1,
+    "work_order_read_only_task": 11,
+    "work_order_business_complaint": 1,
+    "active_task_slot_fill": 2,
+    "task_interrupt_resume_cancel": 3
+  },
+  "failure_type_counts": {
+    "track_mismatch": 18
+  },
+  "bucket_failure_type_counts": {
+    "chitchat": {
+      "track_mismatch": 1
+    },
+    "work_order_read_only_task": {
+      "track_mismatch": 11,
+      "effective_gate_reject": 4
+    },
+    "work_order_business_complaint": {
+      "track_mismatch": 1,
+      "effective_gate_reject": 1
+    },
+    "active_task_slot_fill": {
+      "track_mismatch": 2,
+      "effective_gate_reject": 1
+    },
+    "task_interrupt_resume_cancel": {
+      "track_mismatch": 3,
+      "effective_gate_reject": 1
+    }
+  },
+  "top_predicted_patterns_by_bucket": {
+    "chitchat": [
+      {
+        "count": 1,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": null,
+          "knowledge": {
+            "intents": [
+              "general_property_info"
+            ]
+          },
+          "task": null
+        }
+      }
+    ],
+    "work_order_read_only_task": [
+      {
+        "count": 3,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": null,
+          "knowledge": {
+            "intents": [
+              "service_item_info"
+            ]
+          },
+          "task": null
+        }
+      },
+      {
+        "count": 2,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": null,
+          "knowledge": {
+            "intents": [
+              "work_order_info"
+            ]
+          },
+          "task": null
+        }
+      },
+      {
+        "count": 2,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": null,
+          "knowledge": {
+            "intents": [
+              "resident_service_items_list_query"
+            ]
+          },
+          "task": null
+        }
+      }
+    ],
+    "work_order_business_complaint": [
+      {
+        "count": 1,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": null,
+          "knowledge": null,
+          "task": null
+        }
+      }
+    ],
+    "active_task_slot_fill": [
+      {
+        "count": 1,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": null,
+          "knowledge": {
+            "intents": [
+              "service_item_info"
+            ]
+          },
+          "task": null
+        }
+      },
+      {
+        "count": 1,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": null,
+          "knowledge": null,
+          "task": null
+        }
+      }
+    ],
+    "task_interrupt_resume_cancel": [
+      {
+        "count": 2,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": {
+            "action": "exit_runtime"
+          },
+          "knowledge": null,
+          "task": null
+        }
+      },
+      {
+        "count": 1,
+        "predicted_output": {
+          "chitchat": null,
+          "directive": null,
+          "knowledge": null,
+          "task": null
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+=sk-05d799a497e26bf5b230c22bec0edefbd5132e752841f3bb8559f7a1d81621cb : 无法将“=sk-05d799a497e26bf5b230c22bec0edefbd513
+2e752841f3bb8559f7a1d81621cb”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保
+路径正确，然后再试一次。
+所在位置 行:1 字符: 1
++ ='sk-05d799a497e26bf5b230c22bec0edefbd5132e752841f3bb8559f7a1d81621cb ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (=sk-05d799a497e...559f7a1d81621cb:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+=https://jsyai.xinglian.work : 无法将“=https://jsyai.xinglian.work”项识别为 cmdlet、函数、脚本文件或可运行程序的名称
+。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次。
+所在位置 行:1 字符: 73
++ ... 2e752841f3bb8559f7a1d81621cb'; ='https://jsyai.xinglian.work'; python ...
++                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (=https://jsyai.xinglian.work:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "tp_r3_ambiguous_all_null_train_079",
+    "split": "train",
+    "bucket": "ambiguous_all_null",
+    "anchor_id": "tp_ambiguous_all_null_train_018",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_active_task_slot_fill_train_079",
+    "split": "train",
+    "bucket": "active_task_slot_fill",
+    "anchor_id": "tp_active_task_slot_fill_train_046",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_task_interrupt_resume_cancel_train_079",
+    "split": "train",
+    "bucket": "task_interrupt_resume_cancel",
+    "anchor_id": "tp_task_interrupt_resume_cancel_train_003",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_directive_exit_runtime_train_039",
+    "split": "train",
+    "bucket": "directive_exit_runtime",
+    "anchor_id": "tp_directive_exit_runtime_train_029",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_ambiguous_all_null_val_019",
+    "split": "val",
+    "bucket": "ambiguous_all_null",
+    "anchor_id": "tp_ambiguous_all_null_val_001",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_active_task_slot_fill_val_019",
+    "split": "val",
+    "bucket": "active_task_slot_fill",
+    "anchor_id": "tp_active_task_slot_fill_val_000",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_task_interrupt_resume_cancel_val_019",
+    "split": "val",
+    "bucket": "task_interrupt_resume_cancel",
+    "anchor_id": "tp_task_interrupt_resume_cancel_val_000",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_directive_exit_runtime_val_009",
+    "split": "val",
+    "bucket": "directive_exit_runtime",
+    "anchor_id": "tp_directive_exit_runtime_val_001",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_work_order_business_urge_val_007",
+    "split": "val",
+    "bucket": "work_order_business_urge",
+    "anchor_id": "tp_work_order_business_urge_val_002",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  },
+  {
+    "id": "tp_r3_work_order_business_complaint_val_007",
+    "split": "val",
+    "bucket": "work_order_business_complaint",
+    "anchor_id": "tp_work_order_business_complaint_val_004",
+    "generation_model_alias": "project_deepseek",
+    "review_model_alias": "project_deepseek"
+  }
+]

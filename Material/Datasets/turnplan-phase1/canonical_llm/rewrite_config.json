@@ -1,0 +1,21 @@
+{
+  "split": "both",
+  "limit": null,
+  "start_index": 0,
+  "model_strategy": "round_robin",
+  "routing_seed": 20260606,
+  "temperature": 0.9,
+  "timeout_seconds": 120,
+  "model_pool": [
+    {
+      "alias": "xinglian_openai",
+      "model": "gpt-5.4-mini",
+      "base_url": "https://jsyai.xinglian.work"
+    },
+    {
+      "alias": "project_deepseek",
+      "model": "deepseek-v4-flash",
+      "base_url": "https://api.deepseek.com"
+    }
+  ]
+}

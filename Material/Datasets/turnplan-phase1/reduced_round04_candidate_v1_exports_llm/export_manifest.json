@@ -1,0 +1,27 @@
+{
+  "dataset_name": "reduced_round04_candidate_v1",
+  "train_count": 225,
+  "val_count": 39,
+  "buckets": {
+    "train": [
+      "active_task_slot_fill",
+      "ambiguous_all_null",
+      "directive_exit_runtime",
+      "task_interrupt_resume_cancel",
+      "work_order_business_complaint",
+      "work_order_business_urge"
+    ],
+    "val": [
+      "active_task_slot_fill",
+      "ambiguous_all_null",
+      "directive_exit_runtime",
+      "task_interrupt_resume_cancel",
+      "work_order_business_complaint",
+      "work_order_business_urge"
+    ]
+  },
+  "source_files": {
+    "train": "records_train.jsonl",
+    "val": "records_val.jsonl"
+  }
+}

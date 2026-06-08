@@ -1,0 +1,392 @@
+slots:
+  resident_id:
+    type: text
+    label: 住户编号
+    description: 当前对话住户的编号，对应前端 sender_id 和中台 resident_id
+
+  work_order_id:
+    type: text
+    label: 工单号
+    description: 当前咨询或操作的工单编号
+
+  work_order_status_hint:
+    type: text
+    label: 工单状态提示
+    description: 前端对象消息直接带入的工单状态提示
+
+  work_order_summary_hint:
+    type: text
+    label: 工单摘要提示
+    description: 前端对象消息直接带入的工单摘要提示
+
+  appointment_time_hint:
+    type: text
+    label: 预约时间提示
+    description: 前端对象消息中携带的预约上门时间
+
+  work_order_amount_hint:
+    type: text
+    label: 工单金额提示
+    description: 前端对象消息中携带的工单金额
+
+  service_item_id:
+    type: text
+    label: 服务项目号
+    description: 当前咨询的服务项目编号
+
+  service_item_status_hint:
+    type: text
+    label: 服务状态提示
+    description: 前端对象消息直接带入的服务项目状态提示
+
+  service_item_description_hint:
+    type: text
+    label: 服务描述提示
+    description: 前端对象消息直接带入的服务项目描述
+
+  service_item_price_hint:
+    type: text
+    label: 服务价格提示
+    description: 前端对象消息直接带入的服务项目价格
+
+  urge_reason:
+    type: text
+    label: 催办原因
+    description: 住户发起催办时给出的具体原因
+
+  complaint_reason:
+    type: text
+    label: 投诉原因
+    description: 住户发起投诉或异议时给出的具体原因
+
+  complaint_confirm:
+    type: text
+    label: 投诉确认
+    description: 住户是否确认提交投诉，建议值为确认或取消
+
+  rule_topic:
+    type: text
+    label: 规则主题
+    description: 物业规则咨询的主题，例如物业费、装修报备、停车规则、宠物管理
+
+flows:
+  onboarding:
+    name: 欢迎引导
+    description: 在聊天窗口初次打开时欢迎住户，并介绍当前物业智能管家可处理的主要方向。
+    steps:
+      - id: start
+        type: start
+        next: respond
+
+      - id: respond
+        type: action
+        action: action_response
+        args:
+          text: "你好，这里是社区智能管家。我可以帮你查工单状态、处理进度、服务项目详情，也可以协助催办、投诉和规则咨询。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  work_order_status_query:
+    name: 工单状态查询
+    description: 帮住户查询工单当前状态、状态说明和优先级。
+    steps:
+      - id: start
+        type: start
+        next:
+          - if: "slots.get('work_order_id')"
+            then: lookup_work_order_status
+          - else: ask_work_order_id
+
+      - id: ask_work_order_id
+        type: collect
+        slot_name: work_order_id
+        response:
+          text: "请告诉我你要查询的工单号，或者先从右侧选中一条工单。"
+        next: lookup_work_order_status
+
+      - id: lookup_work_order_status
+        type: action
+        action: action_lookup_work_order_status
+        next: show_work_order_status
+
+      - id: show_work_order_status
+        type: action
+        action: action_response
+        args:
+          text: "工单 {{ slots.work_order_id }} 当前状态是：{{ slots.work_order_status }}。{{ slots.work_order_status_desc }} 优先级：{{ slots.work_order_priority }}。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  service_progress_tracking:
+    name: 工单处理进度查询
+    description: 帮住户查询工单当前处理阶段、责任班组、负责人和时间线。
+    steps:
+      - id: start
+        type: start
+        next:
+          - if: "slots.get('work_order_id')"
+            then: lookup_work_order_progress
+          - else: ask_work_order_id
+
+      - id: ask_work_order_id
+        type: collect
+        slot_name: work_order_id
+        response:
+          text: "请告诉我你要查看进度的工单号，或者先从右侧选中对应工单。"
+        next: lookup_work_order_progress
+
+      - id: lookup_work_order_progress
+        type: action
+        action: action_lookup_work_order_progress
+        next: show_work_order_progress
+
+      - id: show_work_order_progress
+        type: action
+        action: action_response
+        args:
+          text: "工单 {{ slots.work_order_id }} 当前处理到 {{ slots.current_stage }}。{{ slots.stage_desc }} 责任班组：{{ slots.service_team }}，负责人：{{ slots.assignee_name }}。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  service_item_detail_query:
+    name: 服务项目详情查询
+    description: 帮住户查询服务项目的价格、状态、简介和属性信息。
+    steps:
+      - id: start
+        type: start
+        next:
+          - if: "slots.get('service_item_id')"
+            then: lookup_service_item_detail
+          - else: ask_service_item_id
+
+      - id: ask_service_item_id
+        type: collect
+        slot_name: service_item_id
+        response:
+          text: "请告诉我你要咨询的服务项目编号，或者先从右侧选中一个服务项目。"
+        next: lookup_service_item_detail
+
+      - id: lookup_service_item_detail
+        type: action
+        action: action_lookup_service_item_detail
+        next: show_service_item_detail
+
+      - id: show_service_item_detail
+        type: action
+        action: action_response
+        args:
+          text: "服务项目 {{ slots.service_item_id }} 当前状态为 {{ slots.service_item_status }}，参考价格 {{ slots.service_item_price }}。{{ slots.service_item_description }}"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  resident_work_orders_list_query:
+    name: 住户工单列表查询
+    description: 帮住户查询自己当前关联的工单列表。
+    steps:
+      - id: start
+        type: start
+        next: lookup_work_orders
+
+      - id: lookup_work_orders
+        type: action
+        action: action_lookup_resident_work_orders
+        next: show_work_orders
+
+      - id: show_work_orders
+        type: action
+        action: action_response
+        args:
+          text: "我已经帮你查到当前住户关联的工单列表，可以继续点选右侧工单卡片查看状态、进度、催办或投诉。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  resident_service_items_list_query:
+    name: 住户服务项目列表查询
+    description: 帮住户查询当前常用或可办理的服务项目列表。
+    steps:
+      - id: start
+        type: start
+        next: lookup_service_items
+
+      - id: lookup_service_items
+        type: action
+        action: action_lookup_resident_service_items
+        next: show_service_items
+
+      - id: show_service_items
+        type: action
+        action: action_response
+        args:
+          text: "我已经帮你查到当前住户可查看的服务项目列表，你可以继续点选右侧卡片咨询收费、范围或办理方式。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  work_order_urge_submission:
+    name: 工单催办
+    description: 帮住户对待受理、处理中或待上门工单发起催办请求。
+    steps:
+      - id: start
+        type: start
+        next:
+          - if: "slots.get('work_order_id')"
+            then: ask_urge_reason
+          - else: ask_work_order_id
+
+      - id: ask_work_order_id
+        type: collect
+        slot_name: work_order_id
+        response:
+          text: "请告诉我你要催办的工单号，或者先从右侧选中一条工单。"
+        next: ask_urge_reason
+
+      - id: ask_urge_reason
+        type: collect
+        slot_name: urge_reason
+        response:
+          text: "请简单告诉我催办原因。如果你只是想尽快处理，也可以直接回复“希望尽快处理”。"
+        next: submit_urge_request
+
+      - id: submit_urge_request
+        type: action
+        action: action_submit_work_order_urge_request
+        next: urge_submitted
+
+      - id: urge_submitted
+        type: action
+        action: action_response
+        args:
+          text: "好的，工单 {{ slots.work_order_id }} 的催办请求已经提交。提交原因：{{ slots.urge_reason }}。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  complaint_request_submission:
+    name: 工单投诉提交
+    description: 帮住户对工单服务结果或处理过程发起投诉或异议。
+    steps:
+      - id: start
+        type: start
+        next:
+          - if: "slots.get('work_order_id')"
+            then: ask_complaint_reason
+          - else: ask_work_order_id
+
+      - id: ask_work_order_id
+        type: collect
+        slot_name: work_order_id
+        response:
+          text: "请告诉我你要投诉的工单号，或者先从右侧选中对应工单。"
+        next: ask_complaint_reason
+
+      - id: ask_complaint_reason
+        type: collect
+        slot_name: complaint_reason
+        response:
+          text: "请简要说明投诉或异议原因。"
+        next: ask_complaint_confirm
+
+      - id: ask_complaint_confirm
+        type: collect
+        slot_name: complaint_confirm
+        response:
+          text: "如果确认提交投诉，请回复“确认”；如果暂时不提交，请回复“取消”。"
+        next: check_complaint_confirm
+
+      - id: check_complaint_confirm
+        type: action
+        action: action_response
+        args:
+          text: "我来确认一下你的投诉提交意愿。"
+        next:
+          - if: "slots.get('complaint_confirm') in ['确认', '确认提交', '是']"
+            then: submit_complaint_request
+          - else: complaint_canceled
+
+      - id: submit_complaint_request
+        type: action
+        action: action_submit_complaint_request
+        next: complaint_submitted
+
+      - id: complaint_submitted
+        type: action
+        action: action_response
+        args:
+          text: "好的，工单 {{ slots.work_order_id }} 的投诉请求已经提交。投诉原因：{{ slots.complaint_reason }}。"
+        next: end
+
+      - id: complaint_canceled
+        type: action
+        action: action_response
+        args:
+          text: "好的，这次先不提交投诉。如果你之后确认要提交，可以随时再告诉我。"
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  resident_rule_qa:
+    name: 物业规则咨询
+    description: 回答住户关于物业费、装修报备、停车规则、宠物管理等问题。
+    steps:
+      - id: start
+        type: start
+        next:
+          - if: "slots.get('rule_topic')"
+            then: answer_rule_topic
+          - else: ask_rule_topic
+
+      - id: ask_rule_topic
+        type: collect
+        slot_name: rule_topic
+        response:
+          text: "请告诉我你想咨询哪类物业规则，例如物业费、装修报备、停车规则或宠物管理。"
+        next: answer_rule_topic
+
+      - id: answer_rule_topic
+        type: action
+        action: action_answer_resident_rule
+        next: end
+
+      - id: end
+        type: end
+        next: []
+
+  human_handoff:
+    name: 人工客服转接
+    description: 将当前对话转交人工物业客服处理。
+    steps:
+      - id: start
+        type: start
+        next: respond
+
+      - id: respond
+        type: action
+        action: action_response
+        args:
+          text: "好的，我来为你转接人工物业客服，请稍等。"
+        next: end
+
+      - id: end
+        type: end
+        next: []

@@ -1,0 +1,61 @@
+{
+  "dataset_id": "reduced_round03_curated_v1",
+  "source_dataset": "reduced_round03_aug_v1",
+  "train_total": 327,
+  "val_total": 84,
+  "bucket_counts": {
+    "ambiguous_all_null": {
+      "train": 80,
+      "val": 20
+    },
+    "active_task_slot_fill": {
+      "train": 73,
+      "val": 20
+    },
+    "task_interrupt_resume_cancel": {
+      "train": 74,
+      "val": 20
+    },
+    "directive_exit_runtime": {
+      "train": 40,
+      "val": 10
+    },
+    "work_order_business_urge": {
+      "train": 30,
+      "val": 6
+    },
+    "work_order_business_complaint": {
+      "train": 30,
+      "val": 8
+    }
+  },
+  "dropped_ids": [
+    "tp_active_task_slot_fill_train_016",
+    "tp_active_task_slot_fill_train_044",
+    "tp_r3_active_task_slot_fill_train_056",
+    "tp_r3_active_task_slot_fill_train_064",
+    "tp_r3_active_task_slot_fill_train_076",
+    "tp_r3_active_task_slot_fill_train_078",
+    "tp_r3_active_task_slot_fill_train_079",
+    "tp_r3_task_interrupt_resume_cancel_train_047",
+    "tp_r3_task_interrupt_resume_cancel_train_054",
+    "tp_r3_task_interrupt_resume_cancel_train_060",
+    "tp_r3_task_interrupt_resume_cancel_train_064",
+    "tp_r3_task_interrupt_resume_cancel_train_069",
+    "tp_r3_task_interrupt_resume_cancel_train_076",
+    "tp_r3_work_order_business_urge_val_005",
+    "tp_r3_work_order_business_urge_val_007"
+  ],
+  "patched_ids": [
+    "tp_directive_exit_runtime_train_007",
+    "tp_active_task_slot_fill_train_023",
+    "tp_active_task_slot_fill_train_035",
+    "tp_r3_active_task_slot_fill_train_054",
+    "tp_r3_active_task_slot_fill_train_055",
+    "tp_r3_active_task_slot_fill_train_060",
+    "tp_r3_active_task_slot_fill_train_066",
+    "tp_r3_active_task_slot_fill_train_070",
+    "tp_active_task_slot_fill_val_009",
+    "tp_r3_active_task_slot_fill_val_013"
+  ]
+}

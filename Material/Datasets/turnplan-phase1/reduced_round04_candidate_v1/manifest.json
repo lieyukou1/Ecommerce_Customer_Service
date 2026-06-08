@@ -1,0 +1,38 @@
+{
+  "dataset_id": "reduced_round04_candidate_v1",
+  "source_datasets": [
+    "reduced_round04_keep_base_v1",
+    "reduced_round04_active_task_slot_fill_repair_v1",
+    "reduced_round04_ambiguous_all_null_rebuild_v1",
+    "reduced_round04_directive_exit_runtime_rebuild_v1"
+  ],
+  "total_records": 264,
+  "bucket_counts": {
+    "active_task_slot_fill": {
+      "train": 50,
+      "val": 10
+    },
+    "ambiguous_all_null": {
+      "train": 35,
+      "val": 6
+    },
+    "directive_exit_runtime": {
+      "train": 35,
+      "val": 6
+    },
+    "task_interrupt_resume_cancel": {
+      "train": 45,
+      "val": 7
+    },
+    "work_order_business_complaint": {
+      "train": 30,
+      "val": 5
+    },
+    "work_order_business_urge": {
+      "train": 30,
+      "val": 5
+    }
+  },
+  "sft_ready_records": 264,
+  "unsafe_records": []
+}

@@ -1,0 +1,63 @@
+{
+  "dataset_id": "reduced_round04_directive_exit_runtime_rebuild_v1",
+  "source_dataset": "canonical_llm",
+  "bucket": "directive_exit_runtime",
+  "total_records": 41,
+  "split_counts": {
+    "train": 35,
+    "val": 6
+  },
+  "state_counts": {
+    "FOCUSED_KNOWLEDGE": 14,
+    "ACTIVE_TASK": 27
+  },
+  "flow_counts": {
+    "focused_knowledge": 14,
+    "work_order_urge_submission": 13,
+    "complaint_request_submission": 7,
+    "work_order_status_query": 7
+  },
+  "record_ids": [
+    "tp_directive_exit_runtime_train_000",
+    "tp_directive_exit_runtime_train_001",
+    "tp_directive_exit_runtime_train_002",
+    "tp_directive_exit_runtime_train_003",
+    "tp_directive_exit_runtime_train_004",
+    "tp_directive_exit_runtime_train_005",
+    "tp_directive_exit_runtime_train_006",
+    "tp_directive_exit_runtime_train_007",
+    "tp_directive_exit_runtime_train_008",
+    "tp_directive_exit_runtime_train_009",
+    "tp_directive_exit_runtime_train_010",
+    "tp_directive_exit_runtime_train_011",
+    "tp_directive_exit_runtime_train_012",
+    "tp_directive_exit_runtime_train_013",
+    "tp_directive_exit_runtime_train_014",
+    "tp_directive_exit_runtime_train_015",
+    "tp_directive_exit_runtime_train_016",
+    "tp_directive_exit_runtime_train_017",
+    "tp_directive_exit_runtime_train_018",
+    "tp_directive_exit_runtime_train_019",
+    "tp_directive_exit_runtime_train_020",
+    "tp_directive_exit_runtime_train_021",
+    "tp_directive_exit_runtime_train_022",
+    "tp_directive_exit_runtime_train_023",
+    "tp_directive_exit_runtime_train_024",
+    "tp_directive_exit_runtime_train_025",
+    "tp_directive_exit_runtime_train_026",
+    "tp_directive_exit_runtime_train_027",
+    "tp_directive_exit_runtime_train_028",
+    "tp_directive_exit_runtime_train_029",
+    "tp_directive_exit_runtime_train_030",
+    "tp_directive_exit_runtime_train_031",
+    "tp_directive_exit_runtime_train_032",
+    "tp_directive_exit_runtime_train_033",
+    "tp_directive_exit_runtime_train_034",
+    "tp_directive_exit_runtime_val_000",
+    "tp_directive_exit_runtime_val_001",
+    "tp_directive_exit_runtime_val_002",
+    "tp_directive_exit_runtime_val_003",
+    "tp_directive_exit_runtime_val_004",
+    "tp_directive_exit_runtime_val_005"
+  ]
+}

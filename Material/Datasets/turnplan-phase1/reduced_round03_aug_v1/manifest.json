@@ -1,0 +1,74 @@
+{
+  "dataset_id": "reduced_round03_aug_v1",
+  "source_dataset": "reduced_round03_base_v1",
+  "target_buckets": {
+    "ambiguous_all_null": {
+      "train": 80,
+      "val": 20
+    },
+    "active_task_slot_fill": {
+      "train": 80,
+      "val": 20
+    },
+    "task_interrupt_resume_cancel": {
+      "train": 80,
+      "val": 20
+    },
+    "directive_exit_runtime": {
+      "train": 40,
+      "val": 10
+    },
+    "work_order_business_urge": {
+      "train": 30,
+      "val": 8
+    },
+    "work_order_business_complaint": {
+      "train": 30,
+      "val": 8
+    }
+  },
+  "train_total": 340,
+  "val_total": 86,
+  "bucket_counts": {
+    "ambiguous_all_null": {
+      "train": 80,
+      "val": 20
+    },
+    "active_task_slot_fill": {
+      "train": 80,
+      "val": 20
+    },
+    "task_interrupt_resume_cancel": {
+      "train": 80,
+      "val": 20
+    },
+    "directive_exit_runtime": {
+      "train": 40,
+      "val": 10
+    },
+    "work_order_business_urge": {
+      "train": 30,
+      "val": 8
+    },
+    "work_order_business_complaint": {
+      "train": 30,
+      "val": 8
+    }
+  },
+  "health_report": [
+    {
+      "alias": "xinglian_openai",
+      "model": "gpt-5.4-mini",
+      "base_url": "https://jsyai.xinglian.work",
+      "ok": false,
+      "detail": "HTTP Error 403: Forbidden"
+    },
+    {
+      "alias": "project_deepseek",
+      "model": "deepseek-v4-flash",
+      "base_url": "https://api.deepseek.com",
+      "ok": true,
+      "detail": "ok"
+    }
+  ]
+}

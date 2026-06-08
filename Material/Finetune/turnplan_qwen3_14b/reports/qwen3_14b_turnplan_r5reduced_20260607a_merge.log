@@ -1,0 +1,347 @@
+[INFO|configuration_utils.py:769] 2026-06-08 00:09:01,035 >> loading configuration file /root/autodl-tmp/ecs-llm/models/Qwen3-14B/config.json
+[INFO|configuration_utils.py:847] 2026-06-08 00:09:01,038 >> Model config Qwen3Config {
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 5120,
+  "initializer_range": 0.02,
+  "intermediate_size": 17408,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 40960,
+  "max_window_layers": 40,
+  "model_type": "qwen3",
+  "num_attention_heads": 40,
+  "num_hidden_layers": 40,
+  "num_key_value_heads": 8,
+  "pad_token_id": null,
+  "rms_norm_eps": 1e-06,
+  "rope_parameters": {
+    "rope_theta": 1000000,
+    "rope_type": "default"
+  },
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "transformers_version": "5.6.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|configuration_utils.py:769] 2026-06-08 00:09:01,619 >> loading configuration file /root/autodl-tmp/ecs-llm/models/Qwen3-14B/config.json
+[INFO|configuration_utils.py:847] 2026-06-08 00:09:01,621 >> Model config Qwen3Config {
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 5120,
+  "initializer_range": 0.02,
+  "intermediate_size": 17408,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 40960,
+  "max_window_layers": 40,
+  "model_type": "qwen3",
+  "num_attention_heads": 40,
+  "num_hidden_layers": 40,
+  "num_key_value_heads": 8,
+  "pad_token_id": null,
+  "rms_norm_eps": 1e-06,
+  "rope_parameters": {
+    "rope_theta": 1000000,
+    "rope_type": "default"
+  },
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "transformers_version": "5.6.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|configuration_utils.py:769] 2026-06-08 00:09:01,621 >> loading configuration file /root/autodl-tmp/ecs-llm/models/Qwen3-14B/config.json
+[INFO|configuration_utils.py:847] 2026-06-08 00:09:01,622 >> Model config Qwen3Config {
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 5120,
+  "initializer_range": 0.02,
+  "intermediate_size": 17408,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 40960,
+  "max_window_layers": 40,
+  "model_type": "qwen3",
+  "num_attention_heads": 40,
+  "num_hidden_layers": 40,
+  "num_key_value_heads": 8,
+  "pad_token_id": null,
+  "rms_norm_eps": 1e-06,
+  "rope_parameters": {
+    "rope_theta": 1000000,
+    "rope_type": "default"
+  },
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "transformers_version": "5.6.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|configuration_utils.py:769] 2026-06-08 00:09:02,008 >> loading configuration file /root/autodl-tmp/ecs-llm/models/Qwen3-14B/config.json
+[INFO|configuration_utils.py:847] 2026-06-08 00:09:02,009 >> Model config Qwen3Config {
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 5120,
+  "initializer_range": 0.02,
+  "intermediate_size": 17408,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 40960,
+  "max_window_layers": 40,
+  "model_type": "qwen3",
+  "num_attention_heads": 40,
+  "num_hidden_layers": 40,
+  "num_key_value_heads": 8,
+  "pad_token_id": null,
+  "rms_norm_eps": 1e-06,
+  "rope_parameters": {
+    "rope_theta": 1000000,
+    "rope_type": "default"
+  },
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "transformers_version": "5.6.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[WARNING|logging.py:340] 2026-06-08 00:09:02,009 >> `torch_dtype` is deprecated! Use `dtype` instead!
+[INFO|2026-06-08 00:09:02] llamafactory.model.model_utils.kv_cache:144 >> KV cache is enabled for faster generation.
+[INFO|modeling_utils.py:748] 2026-06-08 00:09:02,558 >> loading weights file /root/autodl-tmp/ecs-llm/models/Qwen3-14B/model.safetensors.index.json
+[INFO|modeling_utils.py:821] 2026-06-08 00:09:02,558 >> Will use dtype=torch.bfloat16 as defined in model's config object
+[INFO|configuration_utils.py:1027] 2026-06-08 00:09:02,559 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "use_cache": true
+}
+
+Loading weights:   0%|          | 0/443 [00:00<?, ?it/s]Loading weights: 100%|██████████| 443/443 [00:00<00:00, 6917.40it/s]
+[INFO|configuration_utils.py:978] 2026-06-08 00:09:02,735 >> loading configuration file /root/autodl-tmp/ecs-llm/models/Qwen3-14B/generation_config.json
+[INFO|configuration_utils.py:1027] 2026-06-08 00:09:02,735 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "do_sample": true,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "pad_token_id": 151643,
+  "temperature": 0.6,
+  "top_k": 20,
+  "top_p": 0.95
+}
+
+[INFO|2026-06-08 00:09:02] llamafactory.model.model_utils.attention:144 >> Using torch SDPA for faster training and inference.
+[INFO|2026-06-08 00:09:31] llamafactory.model.adapter:144 >> Merged 1 adapter(s).
+[INFO|2026-06-08 00:09:31] llamafactory.model.adapter:144 >> Loaded adapter(s): /root/autodl-tmp/ecs-llm/artifacts/adapters/qwen3-14b-turnplan-r5reduced-20260607a
+[INFO|2026-06-08 00:09:31] llamafactory.model.loader:144 >> all params: 14,768,307,200
+[INFO|2026-06-08 00:09:31] llamafactory.train.tuner:144 >> Convert model dtype to: torch.bfloat16.
+[INFO|configuration_utils.py:533] 2026-06-08 00:09:31,910 >> Configuration saved in /root/autodl-tmp/ecs-llm/artifacts/merged/qwen3-14b-turnplan-r5reduced-20260607a/config.json
+[INFO|configuration_utils.py:816] 2026-06-08 00:09:31,911 >> Configuration saved in /root/autodl-tmp/ecs-llm/artifacts/merged/qwen3-14b-turnplan-r5reduced-20260607a/generation_config.json
+Writing model shards:   0%|          | 0/8 [00:00<?, ?it/s]Writing model shards:  12%|█▎        | 1/8 [00:07<00:50,  7.21s/it]Writing model shards:  25%|██▌       | 2/8 [00:13<00:39,  6.51s/it]Writing model shards:  38%|███▊      | 3/8 [00:19<00:31,  6.32s/it]Writing model shards:  50%|█████     | 4/8 [00:26<00:26,  6.51s/it]Writing model shards:  62%|██████▎   | 5/8 [00:32<00:19,  6.56s/it]Writing model shards:  75%|███████▌  | 6/8 [00:39<00:13,  6.55s/it]Writing model shards:  88%|████████▊ | 7/8 [00:46<00:06,  6.62s/it]Writing model shards: 100%|██████████| 8/8 [00:48<00:00,  5.42s/it]Writing model shards: 100%|██████████| 8/8 [00:48<00:00,  6.11s/it]
+[INFO|modeling_utils.py:3479] 2026-06-08 00:10:20,868 >> The model is bigger than the maximum size per checkpoint (4GB) and is going to be split in 8 checkpoint shards. You can find where each parameters has been saved in the index located at /root/autodl-tmp/ecs-llm/artifacts/merged/qwen3-14b-turnplan-r5reduced-20260607a/model.safetensors.index.json.
+[INFO|tokenization_utils_base.py:3278] 2026-06-08 00:10:20,869 >> chat template saved in /root/autodl-tmp/ecs-llm/artifacts/merged/qwen3-14b-turnplan-r5reduced-20260607a/chat_template.jinja
+[INFO|tokenization_utils_base.py:2111] 2026-06-08 00:10:20,869 >> tokenizer config file saved in /root/autodl-tmp/ecs-llm/artifacts/merged/qwen3-14b-turnplan-r5reduced-20260607a/tokenizer_config.json
+[INFO|2026-06-08 00:10:20] llamafactory.train.tuner:144 >> Ollama modelfile saved in /root/autodl-tmp/ecs-llm/artifacts/merged/qwen3-14b-turnplan-r5reduced-20260607a/Modelfile

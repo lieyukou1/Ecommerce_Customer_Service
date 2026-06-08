@@ -1,0 +1,430 @@
+[
+  {
+    "id": "clarify_c1",
+    "track": "clarify",
+    "notes": "cold-start ambiguous business request",
+    "context": {
+      "history": [],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": null,
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "我这边有个门禁的事想处理一下"
+    },
+    "clarify_context": {
+      "source": "validation",
+      "reason": "missing_track"
+    }
+  },
+  {
+    "id": "clarify_c2",
+    "track": "clarify",
+    "notes": "focused service item but user direction still fuzzy",
+    "context": {
+      "history": [
+        {
+          "role": "assistant",
+          "text": "我这边已经看到你选的是远程重置门锁密码。"
+        }
+      ],
+      "runtime_state": {
+        "conversation_state": "FOCUSED_KNOWLEDGE",
+        "last_route": {
+          "kind": "knowledge",
+          "event": "knowledge_answered"
+        },
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": {
+        "type": "service_item",
+        "id": "SVC2010",
+        "title": "远程重置门锁密码",
+        "attributes": {
+          "price": 30,
+          "service_status": "可办理"
+        }
+      },
+      "user_message": "这个我得怎么弄"
+    },
+    "clarify_context": {
+      "source": "object"
+    }
+  },
+  {
+    "id": "clarify_c3",
+    "track": "clarify",
+    "notes": "active urge flow still missing reason",
+    "context": {
+      "history": [
+        {
+          "role": "user",
+          "text": "帮我催一下这单"
+        },
+        {
+          "role": "assistant",
+          "text": "可以，我先帮你记下，这边再补充一下为什么想催办会更方便处理。"
+        }
+      ],
+      "runtime_state": {
+        "conversation_state": "ACTIVE_TASK",
+        "last_route": {
+          "kind": "task",
+          "event": "task_started"
+        },
+        "last_task_outcome": null
+      },
+      "active_task": {
+        "flow_id": "work_order_urge_submission",
+        "step_id": "collect_urge_reason",
+        "slots": {
+          "work_order_id": "WO20260601001"
+        }
+      },
+      "active_system_task": {
+        "flow_id": "system_collect_information",
+        "step_id": "collect_urge_reason",
+        "slot_name": "urge_reason",
+        "response": {}
+      },
+      "paused_tasks": [],
+      "focused_object": {
+        "type": "work_order",
+        "id": "WO20260601001",
+        "title": "主卧空调不制冷",
+        "attributes": {
+          "status": "待上门"
+        }
+      },
+      "user_message": "嗯，你继续"
+    },
+    "clarify_context": {
+      "source": "validation",
+      "reason": "missing_task_commands"
+    }
+  },
+  {
+    "id": "clarify_c4",
+    "track": "clarify",
+    "notes": "longer context after exit should not keep old runtime wording",
+    "context": {
+      "history": [
+        {
+          "role": "user",
+          "text": "这条先不弄了"
+        },
+        {
+          "role": "assistant",
+          "text": "好的，那我先收住这个。"
+        }
+      ],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": {
+          "kind": "directive",
+          "event": "exit_runtime"
+        },
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "停车费这块我想先问一下"
+    },
+    "clarify_context": {
+      "source": "validation",
+      "reason": "missing_knowledge_intent"
+    }
+  },
+  {
+    "id": "knowledge_k1",
+    "track": "knowledge",
+    "notes": "cold-start rule question",
+    "context": {
+      "history": [],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": null,
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "装修报备一般都得注意什么"
+    },
+    "knowledge_intents": [
+      "renovation_filing_rule"
+    ]
+  },
+  {
+    "id": "knowledge_k2",
+    "track": "knowledge",
+    "notes": "spoken fee explanation",
+    "context": {
+      "history": [],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": null,
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "物业费到底是怎么收的，我先搞明白"
+    },
+    "knowledge_intents": [
+      "property_fee_rule"
+    ]
+  },
+  {
+    "id": "knowledge_k3",
+    "track": "knowledge",
+    "notes": "focused service item follow-up",
+    "context": {
+      "history": [
+        {
+          "role": "user",
+          "text": "净水器滤芯更换一般怎么收费"
+        },
+        {
+          "role": "assistant",
+          "text": "这项服务会按滤芯型号和上门情况来说明。"
+        }
+      ],
+      "runtime_state": {
+        "conversation_state": "FOCUSED_KNOWLEDGE",
+        "last_route": {
+          "kind": "knowledge",
+          "event": "knowledge_answered"
+        },
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": {
+        "type": "service_item",
+        "id": "SVC2007",
+        "title": "净水器滤芯更换",
+        "attributes": {
+          "price": 149,
+          "service_status": "可预约"
+        }
+      },
+      "user_message": "那材料是谁出"
+    },
+    "knowledge_intents": [
+      "service_item_info"
+    ]
+  },
+  {
+    "id": "knowledge_k4",
+    "track": "knowledge",
+    "notes": "longer context topic switch but still knowledge",
+    "context": {
+      "history": [
+        {
+          "role": "user",
+          "text": "宠物平时有什么要求"
+        },
+        {
+          "role": "assistant",
+          "text": "主要会涉及登记、牵引和公共区域卫生这些要求。"
+        },
+        {
+          "role": "user",
+          "text": "那社区公约呢"
+        },
+        {
+          "role": "assistant",
+          "text": "社区公约一般会约束公共秩序、噪音和公共区域使用。"
+        }
+      ],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": {
+          "kind": "knowledge",
+          "event": "knowledge_answered"
+        },
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "停车这块你也顺便给我讲讲"
+    },
+    "knowledge_intents": [
+      "parking_rule"
+    ]
+  },
+  {
+    "id": "knowledge_k5",
+    "track": "knowledge",
+    "notes": "service capabilities overview",
+    "context": {
+      "history": [],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": null,
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "你们平时都能帮住户处理哪些事"
+    },
+    "knowledge_intents": [
+      "general_property_info"
+    ]
+  },
+  {
+    "id": "knowledge_k6",
+    "track": "knowledge",
+    "notes": "work order info with focused work order",
+    "context": {
+      "history": [
+        {
+          "role": "assistant",
+          "text": "我这边已经看到你选中的那条工单了。"
+        }
+      ],
+      "runtime_state": {
+        "conversation_state": "FOCUSED_KNOWLEDGE",
+        "last_route": {
+          "kind": "knowledge",
+          "event": "knowledge_answered"
+        },
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": {
+        "type": "work_order",
+        "id": "WO20260601002",
+        "title": "厨房水槽下方渗水",
+        "attributes": {
+          "status": "处理中"
+        }
+      },
+      "user_message": "这条之前师傅都看过什么情况"
+    },
+    "knowledge_intents": [
+      "work_order_info"
+    ]
+  },
+  {
+    "id": "chitchat_h1",
+    "track": "chitchat",
+    "notes": "simple greeting",
+    "context": {
+      "history": [],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": null,
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "你好，在吗"
+    }
+  },
+  {
+    "id": "chitchat_h2",
+    "track": "chitchat",
+    "notes": "identity question",
+    "context": {
+      "history": [],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": null,
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "你是物业客服吗"
+    }
+  },
+  {
+    "id": "chitchat_h3",
+    "track": "chitchat",
+    "notes": "light emotion should not force clarify",
+    "context": {
+      "history": [],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": null,
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "今天真是被这些事折腾烦了"
+    }
+  },
+  {
+    "id": "chitchat_h4",
+    "track": "chitchat",
+    "notes": "probing small talk",
+    "context": {
+      "history": [],
+      "runtime_state": {
+        "conversation_state": "IDLE",
+        "last_route": null,
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "你平时是不是挺忙的"
+    }
+  },
+  {
+    "id": "chitchat_h5",
+    "track": "chitchat",
+    "notes": "after one round of small talk",
+    "context": {
+      "history": [
+        {
+          "role": "user",
+          "text": "你是物业客服吗"
+        },
+        {
+          "role": "assistant",
+          "text": "对，我这边可以先帮你接住问题。"
+        }
+      ],
+      "runtime_state": {
+        "conversation_state": "CHITCHAT",
+        "last_route": {
+          "kind": "chitchat",
+          "event": "chitchat_answered"
+        },
+        "last_task_outcome": null
+      },
+      "active_task": null,
+      "active_system_task": null,
+      "paused_tasks": [],
+      "focused_object": null,
+      "user_message": "行，那我先熟悉熟悉你"
+    }
+  }
+]

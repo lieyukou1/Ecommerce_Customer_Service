@@ -1,0 +1,2489 @@
+{
+  "summary": {
+    "total": 39,
+    "regressions": 3,
+    "gains": 1,
+    "change_family_counts": {
+      "all_null_gain": 1,
+      "command_family_shift_without_net_success_change": 1,
+      "flow_shift_without_net_success_change": 1,
+      "slot_extraction_change_without_net_success_change": 1,
+      "task_to_all_null_regression": 2,
+      "task_to_exit_runtime_regression": 1
+    },
+    "regression_bucket_counts": {
+      "active_task_slot_fill": 1,
+      "work_order_business_complaint": 1,
+      "task_interrupt_resume_cancel": 1
+    },
+    "gain_bucket_counts": {
+      "ambiguous_all_null": 1
+    }
+  },
+  "rows": [
+    {
+      "id": "tp_ambiguous_all_null_val_002",
+      "bucket": "ambiguous_all_null",
+      "user_message": "我想把门锁密码处理一下",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "service_item_detail_query"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "service_item_id": "SVC2003"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "all_null",
+      "base_success": false,
+      "candidate_success": true,
+      "base_track_match": false,
+      "candidate_track_match": true,
+      "base_command_family_match": false,
+      "candidate_command_family_match": true,
+      "base_flow_match": false,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "all_null_gain"
+    },
+    {
+      "id": "tp_task_interrupt_resume_cancel_val_002",
+      "bucket": "task_interrupt_resume_cancel",
+      "user_message": "先别按催办处理了，我想直接投诉，这事已经影响正常进出了",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "complaint_reason": "已经影响正常进出"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "cancel_flow"
+            },
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "complaint_reason": "这事已经影响正常进出了",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "complaint_reason": "这事已经影响正常进出了",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": false,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "command_family_shift_without_net_success_change"
+    },
+    {
+      "id": "tp_task_interrupt_resume_cancel_val_004",
+      "bucket": "task_interrupt_resume_cancel",
+      "user_message": "那现在说吧，那个催办的单子，继续填原因",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "resume_flow",
+              "flow": "work_order_urge_submission"
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "urge_reason": "那现在说吧，那个催办的单子，继续填原因"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "resume_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "urge_reason": "车位地锁无法升起"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": false,
+      "candidate_command_family_match": false,
+      "base_flow_match": false,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "flow_shift_without_net_success_change"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_001",
+      "bucket": "active_task_slot_fill",
+      "user_message": "家里老人怕热，能快点处理吗",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "urge_reason": "家里老人怕热"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "urge_reason": "家里老人怕热，能快点处理吗"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "urge_reason": "家里老人怕热"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "slot_extraction_change_without_net_success_change"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_007",
+      "bucket": "active_task_slot_fill",
+      "user_message": "可视对讲检修这个",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "service_item_id": "SVC2008"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "service_item_id": "SVC2008"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "all_null",
+      "base_success": true,
+      "candidate_success": false,
+      "base_track_match": true,
+      "candidate_track_match": false,
+      "base_command_family_match": true,
+      "candidate_command_family_match": false,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": false,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": false,
+      "change_family": "task_to_all_null_regression"
+    },
+    {
+      "id": "tp_work_order_business_complaint_val_004",
+      "bucket": "work_order_business_complaint",
+      "user_message": "这车位地锁报修了几次都没弄好，到底能不能解决了？",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601009",
+                "complaint_reason": "反复报修还没解决"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601009",
+                "complaint_reason": "车位地锁报修了几次都没弄好",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "all_null",
+      "base_success": true,
+      "candidate_success": false,
+      "base_track_match": true,
+      "candidate_track_match": false,
+      "base_command_family_match": true,
+      "candidate_command_family_match": false,
+      "base_flow_match": true,
+      "candidate_flow_match": false,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": false,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": false,
+      "change_family": "task_to_all_null_regression"
+    },
+    {
+      "id": "tp_task_interrupt_resume_cancel_val_006",
+      "bucket": "task_interrupt_resume_cancel",
+      "user_message": "这个先停一下，我想改成投诉了，之前说好会上门，结果一直没来",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601011",
+                "complaint_reason": "说好上门又放了鸽子"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "cancel_flow"
+            },
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601011",
+                "complaint_reason": "之前说好会上门，结果一直没来"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "task",
+      "candidate_track": "directive",
+      "base_success": true,
+      "candidate_success": false,
+      "base_track_match": true,
+      "candidate_track_match": false,
+      "base_command_family_match": false,
+      "candidate_command_family_match": false,
+      "base_flow_match": true,
+      "candidate_flow_match": false,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "task_to_exit_runtime_regression"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_000",
+      "bucket": "active_task_slot_fill",
+      "user_message": "就问入户深度保洁。",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "service_item_id": "SVC2001"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "service_item_id": "SVC2001"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "service_item_id": "SVC2001"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_002",
+      "bucket": "active_task_slot_fill",
+      "user_message": "主要是已经影响到正常进出了，确实挺不方便的",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_reason": "已经影响正常进出",
+                "contact_phone": "13800001002"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_reason": "主要是已经影响到正常进出了，确实挺不方便的"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_reason": "主要是已经影响到正常进出了，确实挺不方便的"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_003",
+      "bucket": "active_task_slot_fill",
+      "user_message": "嗯，就按投诉提上去",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_004",
+      "bucket": "active_task_slot_fill",
+      "user_message": "手机号13800001004",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "contact_phone": "13800001004"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "contact_phone": "13800001004"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "contact_phone": "13800001004"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_005",
+      "bucket": "active_task_slot_fill",
+      "user_message": "回访打这个电话 13800001005",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "contact_phone": "13800001005"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "contact_phone": "13800001005"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "contact_phone": "13800001005"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_006",
+      "bucket": "active_task_slot_fill",
+      "user_message": "我想问社区公约",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "rule_topic": "社区公约"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": null,
+        "knowledge": {
+          "intents": [
+            "community_rule"
+          ]
+        },
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": {
+          "intents": [
+            "community_rule"
+          ]
+        },
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "knowledge",
+      "candidate_track": "knowledge",
+      "base_success": false,
+      "candidate_success": false,
+      "base_track_match": false,
+      "candidate_track_match": false,
+      "base_command_family_match": false,
+      "candidate_command_family_match": false,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_008",
+      "bucket": "active_task_slot_fill",
+      "user_message": "家里老人比较怕热，拖久了不太行",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "urge_reason": "家里老人怕热",
+                "contact_phone": "13800001008"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "urge_reason": "家里老人比较怕热，拖久了不太行"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "urge_reason": "家里老人比较怕热，拖久了不太行"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_active_task_slot_fill_val_009",
+      "bucket": "active_task_slot_fill",
+      "user_message": "已经影响到正常进出了",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_reason": "已经影响正常进出"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_reason": "已经影响到正常进出了"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "set_slots",
+              "slots": {
+                "complaint_reason": "已经影响到正常进出了"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_ambiguous_all_null_val_000",
+      "bucket": "ambiguous_all_null",
+      "user_message": "门锁密码这边怎么搞",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "knowledge": {
+          "intents": [
+            "service_item_info"
+          ]
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": {
+          "intents": [
+            "service_item_info"
+          ]
+        },
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "knowledge",
+      "candidate_track": "knowledge",
+      "base_success": false,
+      "candidate_success": false,
+      "base_track_match": false,
+      "candidate_track_match": false,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": false,
+      "candidate_effective_gate_pass": false,
+      "base_protocol_gate_pass": false,
+      "candidate_protocol_gate_pass": false,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_ambiguous_all_null_val_001",
+      "bucket": "ambiguous_all_null",
+      "user_message": "我想把门锁密码处理一下",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "all_null",
+      "candidate_track": "all_null",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": false,
+      "candidate_protocol_gate_pass": false,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_ambiguous_all_null_val_003",
+      "bucket": "ambiguous_all_null",
+      "user_message": "门锁密码这事能弄吗",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": null,
+        "knowledge": {
+          "intents": [
+            "service_item_info"
+          ]
+        },
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": {
+          "intents": [
+            "service_item_info"
+          ]
+        },
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "knowledge",
+      "candidate_track": "knowledge",
+      "base_success": false,
+      "candidate_success": false,
+      "base_track_match": false,
+      "candidate_track_match": false,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": false,
+      "candidate_effective_gate_pass": false,
+      "base_protocol_gate_pass": false,
+      "candidate_protocol_gate_pass": false,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_ambiguous_all_null_val_004",
+      "bucket": "ambiguous_all_null",
+      "user_message": "我想把门锁密码处理一下",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "all_null",
+      "candidate_track": "all_null",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": false,
+      "candidate_protocol_gate_pass": false,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_ambiguous_all_null_val_005",
+      "bucket": "ambiguous_all_null",
+      "user_message": "门锁密码这事怎么弄",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "knowledge": {
+          "intents": [
+            "service_item_info"
+          ]
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": {
+          "intents": [
+            "service_item_info"
+          ]
+        },
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "knowledge",
+      "candidate_track": "knowledge",
+      "base_success": false,
+      "candidate_success": false,
+      "base_track_match": false,
+      "candidate_track_match": false,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": false,
+      "candidate_effective_gate_pass": false,
+      "base_protocol_gate_pass": false,
+      "candidate_protocol_gate_pass": false,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_directive_exit_runtime_val_000",
+      "bucket": "directive_exit_runtime",
+      "user_message": "这个先放着，我换个话题",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_predicted_output": {
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "directive",
+      "candidate_track": "directive",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_directive_exit_runtime_val_001",
+      "bucket": "directive_exit_runtime",
+      "user_message": "先不催这个了，我想说别的",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_predicted_output": {
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "directive",
+      "candidate_track": "directive",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_directive_exit_runtime_val_002",
+      "bucket": "directive_exit_runtime",
+      "user_message": "这个先放一放，我想聊别的",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_predicted_output": {
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "directive",
+      "candidate_track": "directive",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_directive_exit_runtime_val_003",
+      "bucket": "directive_exit_runtime",
+      "user_message": "先到这吧，我另外问个事",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_predicted_output": {
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "directive",
+      "candidate_track": "directive",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_directive_exit_runtime_val_004",
+      "bucket": "directive_exit_runtime",
+      "user_message": "这个催办先停一下",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_predicted_output": {
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "directive",
+      "candidate_track": "directive",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_directive_exit_runtime_val_005",
+      "bucket": "directive_exit_runtime",
+      "user_message": "这条投诉先别往下提了",
+      "gold_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_predicted_output": {
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "directive",
+      "candidate_track": "directive",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_task_interrupt_resume_cancel_val_000",
+      "bucket": "task_interrupt_resume_cancel",
+      "user_message": "再回到WO20260601005这单，接着刚才没弄完的催办继续办吧",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "resume_flow",
+              "flow": "work_order_urge_submission"
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "resume_flow",
+              "flow": "work_order_urge_submission"
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "resume_flow",
+              "flow": "work_order_urge_submission"
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_task_interrupt_resume_cancel_val_001",
+      "bucket": "task_interrupt_resume_cancel",
+      "user_message": "算了，投诉那个先不弄了",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "cancel_flow"
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "directive",
+      "candidate_track": "directive",
+      "base_success": false,
+      "candidate_success": false,
+      "base_track_match": false,
+      "candidate_track_match": false,
+      "base_command_family_match": false,
+      "candidate_command_family_match": false,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_task_interrupt_resume_cancel_val_003",
+      "bucket": "task_interrupt_resume_cancel",
+      "user_message": "这条先帮我催一下吧，孩子晚上总睡不好",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "urge_reason": "孩子晚上睡不好"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "urge_reason": "孩子晚上总睡不好"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "urge_reason": "孩子晚上总睡不好"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_task_interrupt_resume_cancel_val_005",
+      "bucket": "task_interrupt_resume_cancel",
+      "user_message": "算了，这个投诉先放放，不弄了",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "cancel_flow"
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "candidate_predicted_output": {
+        "task": null,
+        "knowledge": null,
+        "chitchat": null,
+        "directive": {
+          "action": "exit_runtime"
+        }
+      },
+      "base_track": "directive",
+      "candidate_track": "directive",
+      "base_success": false,
+      "candidate_success": false,
+      "base_track_match": false,
+      "candidate_track_match": false,
+      "base_command_family_match": false,
+      "candidate_command_family_match": false,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": true,
+      "candidate_slot_match": true,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_complaint_val_000",
+      "bucket": "work_order_business_complaint",
+      "user_message": "卫生间排风异常这单我要投诉，之前说好会上门，结果临时又爽约了，真的挺影响体验的。",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601005",
+                "complaint_reason": "说好上门又放了鸽子"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601005",
+                "complaint_reason": "之前说好会上门，结果临时又爽约了",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601005",
+                "complaint_reason": "之前说好会上门，结果临时又爽约了",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_complaint_val_001",
+      "bucket": "work_order_business_complaint",
+      "user_message": "麻烦直接给这单走投诉吧，今天弄完还是不行，问题还在，按正式投诉处理就行",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601006",
+                "complaint_reason": "现场处理完问题还是在"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601006",
+                "complaint_reason": "今天弄完还是不行，问题还在",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601006",
+                "complaint_reason": "今天弄完还是不行，问题还在",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_complaint_val_002",
+      "bucket": "work_order_business_complaint",
+      "user_message": "WO20260601007这单我想正式投诉一下，拖得太久了，我这边一直在等，别再只说会跟进了",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "complaint_reason": "处理太慢了",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "complaint_reason": "拖得太久了，我这边一直在等，别再只说会跟进了",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "complaint_reason": "拖得太久了，我这边一直在等",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_complaint_val_003",
+      "bucket": "work_order_business_complaint",
+      "user_message": "这个单拖了好几天了，晚上进出楼道黑漆漆的，实在不方便，我忍不了，必须投诉留个记录",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "complaint_reason": "已经影响正常进出"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "complaint_reason": "这个单拖了好几天了，晚上进出楼道黑漆漆的，实在不方便",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "complaint_request_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "complaint_reason": "晚上进出楼道黑漆漆的，实在不方便",
+                "complaint_confirm": "确认"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_urge_val_000",
+      "bucket": "work_order_business_urge",
+      "user_message": "卫生间排风这单你帮我催一下吧，厨房这边都受影响了，别老让我追着问",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601005",
+                "urge_reason": "已经影响正常做饭了"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601005",
+                "urge_reason": "厨房这边都受影响了，别老让我追着问"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601005",
+                "urge_reason": "厨房这边都受影响了"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_urge_val_001",
+      "bucket": "work_order_business_urge",
+      "user_message": "能不能今天催一下？晚上还得住人，卡顿的窗轨关不上，漏风又冷。",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601006",
+                "urge_reason": "晚上还要继续住人"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601006",
+                "urge_reason": "晚上还得住人，卡顿的窗轨关不上，漏风又冷"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601006",
+                "urge_reason": "晚上还要住人，卡顿的窗轨关不上，漏风又冷"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_urge_val_002",
+      "bucket": "work_order_business_urge",
+      "user_message": "WO20260601007这单能帮我催催吗？家里老人怕热，都等了好几天了，真的着急啊",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "urge_reason": "家里老人怕热"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "urge_reason": "家里老人怕热，都等了好几天了，真的着急啊"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601007",
+                "urge_reason": "家里老人怕热，都等了好几天了，真的着急啊"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_urge_val_003",
+      "bucket": "work_order_business_urge",
+      "user_message": "漏水越来越厉害了，能不能快点催一下啊，上次就拖了好久",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "urge_reason": "漏水越来越严重"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "urge_reason": "漏水越来越厉害了，上次就拖了好久"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601008",
+                "urge_reason": "漏水越来越厉害了，上次就拖了好久"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    },
+    {
+      "id": "tp_work_order_business_urge_val_004",
+      "bucket": "work_order_business_urge",
+      "user_message": "车位地锁一直升不起来，孩子晚上都睡不好，能帮我催一下这单吗？",
+      "gold_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601009",
+                "urge_reason": "孩子晚上睡不好"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601009",
+                "urge_reason": "车位地锁一直升不起来，孩子晚上都睡不好"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "candidate_predicted_output": {
+        "task": {
+          "commands": [
+            {
+              "command": "start_flow",
+              "flow": "work_order_urge_submission"
+            },
+            {
+              "command": "set_slots",
+              "slots": {
+                "work_order_id": "WO20260601009",
+                "urge_reason": "车位地锁一直升不起来，孩子晚上都睡不好"
+              }
+            }
+          ]
+        },
+        "knowledge": null,
+        "chitchat": null,
+        "directive": null
+      },
+      "base_track": "task",
+      "candidate_track": "task",
+      "base_success": true,
+      "candidate_success": true,
+      "base_track_match": true,
+      "candidate_track_match": true,
+      "base_command_family_match": true,
+      "candidate_command_family_match": true,
+      "base_flow_match": true,
+      "candidate_flow_match": true,
+      "base_slot_match": false,
+      "candidate_slot_match": false,
+      "base_effective_gate_pass": true,
+      "candidate_effective_gate_pass": true,
+      "base_protocol_gate_pass": true,
+      "candidate_protocol_gate_pass": true,
+      "change_family": "unchanged"
+    }
+  ]
+}

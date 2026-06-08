@@ -1,0 +1,127 @@
+[
+  {
+    "id": "tp_work_order_read_only_task_val_006",
+    "user_message": "主要想知道上门时间定了没有，只看这个工单就行",
+    "history": [
+      {
+        "role": "user",
+        "text": "我想查一下玄关可视对讲无声那个工单"
+      },
+      {
+        "role": "assistant",
+        "text": "好的，您想了解什么？状态、进度、费用这些都可以问。"
+      },
+      {
+        "role": "user",
+        "text": "就先看这个工单吧"
+      },
+      {
+        "role": "assistant",
+        "text": "好的，咱们就围绕这个工单。"
+      }
+    ],
+    "focused_object": {
+      "type": "work_order",
+      "id": "WO20260601011",
+      "title": "玄关可视对讲无声",
+      "attributes": {
+        "status": "处理中",
+        "amount": 40,
+        "summary": "门禁专员已排查线路，等待主机复位。"
+      }
+    },
+    "gold_track": "task",
+    "gold_output": {
+      "task": {
+        "commands": [
+          {
+            "command": "start_flow",
+            "flow": "work_order_status_query"
+          },
+          {
+            "command": "set_slots",
+            "slots": {
+              "work_order_id": "WO20260601011"
+            }
+          }
+        ]
+      },
+      "knowledge": null,
+      "chitchat": null,
+      "directive": null
+    },
+    "base_pred_track": "task",
+    "base_predicted_output": {
+      "task": {
+        "commands": [
+          {
+            "command": "start_flow",
+            "flow": "service_progress_tracking"
+          }
+        ]
+      },
+      "knowledge": null,
+      "chitchat": null,
+      "directive": null
+    },
+    "round2_pred_track": "all_null",
+    "round2_predicted_output": {
+      "task": null,
+      "knowledge": null,
+      "chitchat": null,
+      "directive": null
+    },
+    "round2_effective_gate_pass": false
+  },
+  {
+    "id": "tp_work_order_read_only_task_val_009",
+    "user_message": "帮我看下我名下现在有几个工单，我就想确认这个",
+    "history": [
+      {
+        "role": "user",
+        "text": "我先想查点信息，不着急办"
+      },
+      {
+        "role": "assistant",
+        "text": "可以，我先帮你看看。"
+      }
+    ],
+    "focused_object": null,
+    "gold_track": "task",
+    "gold_output": {
+      "task": {
+        "commands": [
+          {
+            "command": "start_flow",
+            "flow": "resident_work_orders_list_query"
+          }
+        ]
+      },
+      "knowledge": null,
+      "chitchat": null,
+      "directive": null
+    },
+    "base_pred_track": "task",
+    "base_predicted_output": {
+      "task": {
+        "commands": [
+          {
+            "command": "start_flow",
+            "flow": "resident_work_orders_list_query"
+          }
+        ]
+      },
+      "knowledge": null,
+      "chitchat": null,
+      "directive": null
+    },
+    "round2_pred_track": "all_null",
+    "round2_predicted_output": {
+      "task": null,
+      "knowledge": null,
+      "chitchat": null,
+      "directive": null
+    },
+    "round2_effective_gate_pass": false
+  }
+]

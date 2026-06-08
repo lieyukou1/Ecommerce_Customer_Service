@@ -1,0 +1,67 @@
+{
+  "total_records": 225,
+  "all_null_clarify_fallback_count": 10,
+  "effective_failure_records": 39,
+  "top_level_track_accuracy": 0.8311111111111111,
+  "directive_accuracy": 0.8571428571428571,
+  "all_null_accuracy": 0.3142857142857143,
+  "knowledge_intent_accuracy": 0.0,
+  "task_command_family_accuracy": 0.8193548387096774,
+  "flow_selection_accuracy": 0.9574468085106383,
+  "slot_fill_exact_match": 0.26153846153846155,
+  "json_valid_rate": 1.0,
+  "protocol_gate_pass_rate": 0.9333333333333333,
+  "adjusted_protocol_gate_pass_rate": 0.9777777777777777,
+  "knowledge_false_positive_rate": 0.0,
+  "high_loss_read_only_metrics": {
+    "count": 0,
+    "system_success_rate": 0.0,
+    "list_query_success_rate": 0.0,
+    "work_order_runtime_success_rate": 0.0,
+    "service_item_detail_success_rate": 0.0
+  },
+  "bucket_metrics": {
+    "active_task_slot_fill": {
+      "count": 50,
+      "track_accuracy": 0.96,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 0.98,
+      "effective_protocol_gate_pass_rate": 0.98
+    },
+    "ambiguous_all_null": {
+      "count": 35,
+      "track_accuracy": 0.3142857142857143,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 0.6285714285714286,
+      "effective_protocol_gate_pass_rate": 0.9142857142857143
+    },
+    "directive_exit_runtime": {
+      "count": 35,
+      "track_accuracy": 0.8571428571428571,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    },
+    "task_interrupt_resume_cancel": {
+      "count": 45,
+      "track_accuracy": 0.8444444444444444,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 0.9777777777777777,
+      "effective_protocol_gate_pass_rate": 0.9777777777777777
+    },
+    "work_order_business_complaint": {
+      "count": 30,
+      "track_accuracy": 1.0,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    },
+    "work_order_business_urge": {
+      "count": 30,
+      "track_accuracy": 1.0,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    }
+  }
+}

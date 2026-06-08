@@ -1,0 +1,67 @@
+{
+  "total_records": 84,
+  "all_null_clarify_fallback_count": 12,
+  "effective_failure_records": 22,
+  "top_level_track_accuracy": 0.7738095238095238,
+  "directive_accuracy": 0.8,
+  "all_null_accuracy": 0.6,
+  "knowledge_intent_accuracy": 0.0,
+  "task_command_family_accuracy": 0.7222222222222222,
+  "flow_selection_accuracy": 0.7241379310344828,
+  "slot_fill_exact_match": 0.2558139534883721,
+  "json_valid_rate": 0.8928571428571429,
+  "protocol_gate_pass_rate": 0.75,
+  "adjusted_protocol_gate_pass_rate": 0.8928571428571429,
+  "knowledge_false_positive_rate": 0.0,
+  "high_loss_read_only_metrics": {
+    "count": 0,
+    "system_success_rate": 0.0,
+    "list_query_success_rate": 0.0,
+    "work_order_runtime_success_rate": 0.0,
+    "service_item_detail_success_rate": 0.0
+  },
+  "bucket_metrics": {
+    "active_task_slot_fill": {
+      "count": 20,
+      "track_accuracy": 0.9,
+      "json_valid_rate": 0.9,
+      "protocol_gate_pass_rate": 0.9,
+      "effective_protocol_gate_pass_rate": 0.9
+    },
+    "ambiguous_all_null": {
+      "count": 20,
+      "track_accuracy": 0.6,
+      "json_valid_rate": 0.85,
+      "protocol_gate_pass_rate": 0.25,
+      "effective_protocol_gate_pass_rate": 0.85
+    },
+    "directive_exit_runtime": {
+      "count": 10,
+      "track_accuracy": 0.8,
+      "json_valid_rate": 0.8,
+      "protocol_gate_pass_rate": 0.8,
+      "effective_protocol_gate_pass_rate": 0.8
+    },
+    "task_interrupt_resume_cancel": {
+      "count": 20,
+      "track_accuracy": 0.7,
+      "json_valid_rate": 0.95,
+      "protocol_gate_pass_rate": 0.95,
+      "effective_protocol_gate_pass_rate": 0.95
+    },
+    "work_order_business_complaint": {
+      "count": 8,
+      "track_accuracy": 0.875,
+      "json_valid_rate": 0.875,
+      "protocol_gate_pass_rate": 0.875,
+      "effective_protocol_gate_pass_rate": 0.875
+    },
+    "work_order_business_urge": {
+      "count": 6,
+      "track_accuracy": 1.0,
+      "json_valid_rate": 1.0,
+      "protocol_gate_pass_rate": 1.0,
+      "effective_protocol_gate_pass_rate": 1.0
+    }
+  }
+}

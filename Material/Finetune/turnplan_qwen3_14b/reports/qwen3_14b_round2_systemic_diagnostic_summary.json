@@ -1,0 +1,169 @@
+{
+  "metric_comparison": {
+    "val": {
+      "top_level_track_accuracy": {
+        "base": 0.775,
+        "round2": 0.775,
+        "delta_round2_minus_base": 0.0
+      },
+      "task_command_family_accuracy": {
+        "base": 0.6046511627906976,
+        "round2": 0.5813953488372093,
+        "delta_round2_minus_base": -0.023255813953488302
+      },
+      "flow_selection_accuracy": {
+        "base": 0.5161290322580645,
+        "round2": 0.5161290322580645,
+        "delta_round2_minus_base": 0.0
+      },
+      "slot_fill_exact_match": {
+        "base": 0.23529411764705882,
+        "round2": 0.23529411764705882,
+        "delta_round2_minus_base": 0.0
+      },
+      "protocol_gate_pass_rate": {
+        "base": 0.975,
+        "round2": 0.85,
+        "delta_round2_minus_base": -0.125
+      },
+      "adjusted_protocol_gate_pass_rate": {
+        "base": 0.975,
+        "round2": 0.9125,
+        "delta_round2_minus_base": -0.0625
+      },
+      "knowledge_false_positive_rate": {
+        "base": 0.20930232558139536,
+        "round2": 0.23255813953488372,
+        "delta_round2_minus_base": 0.023255813953488358
+      },
+      "bucket::work_order_read_only_task": {
+        "base_track_accuracy": 0.4375,
+        "round2_track_accuracy": 0.3125,
+        "delta": -0.125,
+        "base_effective_gate_pass_rate": 0.875,
+        "round2_effective_gate_pass_rate": 0.75
+      },
+      "bucket::active_task_slot_fill": {
+        "base_track_accuracy": 1.0,
+        "round2_track_accuracy": 0.8,
+        "delta": -0.19999999999999996,
+        "base_effective_gate_pass_rate": 1.0,
+        "round2_effective_gate_pass_rate": 0.9
+      },
+      "bucket::task_interrupt_resume_cancel": {
+        "base_track_accuracy": 0.7142857142857143,
+        "round2_track_accuracy": 0.5714285714285714,
+        "delta": -0.1428571428571429,
+        "base_effective_gate_pass_rate": 1.0,
+        "round2_effective_gate_pass_rate": 0.8571428571428571
+      },
+      "bucket::ambiguous_all_null": {
+        "base_track_accuracy": 0.0,
+        "round2_track_accuracy": 1.0,
+        "delta": 1.0,
+        "base_effective_gate_pass_rate": 1.0,
+        "round2_effective_gate_pass_rate": 1.0
+      }
+    },
+    "train": {
+      "top_level_track_accuracy": {
+        "base": 0.78,
+        "round2": 0.7644444444444445,
+        "delta_round2_minus_base": -0.015555555555555545
+      },
+      "task_command_family_accuracy": {
+        "base": 0.625,
+        "round2": 0.575,
+        "delta_round2_minus_base": -0.050000000000000044
+      },
+      "flow_selection_accuracy": {
+        "base": 0.6871508379888268,
+        "round2": 0.6089385474860335,
+        "delta_round2_minus_base": -0.07821229050279332
+      },
+      "slot_fill_exact_match": {
+        "base": 0.23529411764705882,
+        "round2": 0.21390374331550802,
+        "delta_round2_minus_base": -0.021390374331550804
+      },
+      "protocol_gate_pass_rate": {
+        "base": 0.9311111111111111,
+        "round2": 0.8822222222222222,
+        "delta_round2_minus_base": -0.04888888888888887
+      },
+      "adjusted_protocol_gate_pass_rate": {
+        "base": 0.9444444444444444,
+        "round2": 0.92,
+        "delta_round2_minus_base": -0.02444444444444438
+      },
+      "knowledge_false_positive_rate": {
+        "base": 0.20833333333333334,
+        "round2": 0.2375,
+        "delta_round2_minus_base": 0.029166666666666646
+      },
+      "bucket::work_order_read_only_task": {
+        "base_track_accuracy": 0.49411764705882355,
+        "round2_track_accuracy": 0.3411764705882353,
+        "delta": -0.15294117647058825,
+        "base_effective_gate_pass_rate": 0.8705882352941177,
+        "round2_effective_gate_pass_rate": 0.8
+      },
+      "bucket::active_task_slot_fill": {
+        "base_track_accuracy": 0.8,
+        "round2_track_accuracy": 0.74,
+        "delta": -0.06000000000000005,
+        "base_effective_gate_pass_rate": 1.0,
+        "round2_effective_gate_pass_rate": 0.92
+      },
+      "bucket::task_interrupt_resume_cancel": {
+        "base_track_accuracy": 0.7333333333333333,
+        "round2_track_accuracy": 0.7111111111111111,
+        "delta": -0.022222222222222143,
+        "base_effective_gate_pass_rate": 0.9777777777777777,
+        "round2_effective_gate_pass_rate": 0.9555555555555556
+      },
+      "bucket::ambiguous_all_null": {
+        "base_track_accuracy": 0.2,
+        "round2_track_accuracy": 0.6285714285714286,
+        "delta": 0.42857142857142855,
+        "base_effective_gate_pass_rate": 0.6571428571428571,
+        "round2_effective_gate_pass_rate": 0.8857142857142857
+      }
+    }
+  },
+  "comparison_counts": {
+    "val:both_ok": 56,
+    "val:both_fail": 12,
+    "val:ft_only_ok": 6,
+    "val:base_only_ok": 6,
+    "train:both_ok": 328,
+    "train:both_fail": 83,
+    "train:base_only_ok": 23,
+    "train:ft_only_ok": 16
+  },
+  "read_only_base_right_round2_wrong_count": 2,
+  "base_only_ok_by_bucket": {
+    "val": {
+      "work_order_read_only_task": 2,
+      "work_order_business_complaint": 1,
+      "active_task_slot_fill": 2,
+      "task_interrupt_resume_cancel": 1
+    },
+    "train": {
+      "chitchat": 4,
+      "work_order_read_only_task": 13,
+      "work_order_business_complaint": 2,
+      "active_task_slot_fill": 3,
+      "task_interrupt_resume_cancel": 1
+    }
+  },
+  "round2_only_ok_by_bucket": {
+    "val": {
+      "ambiguous_all_null": 6
+    },
+    "train": {
+      "ambiguous_all_null": 15,
+      "object_context_followup": 1
+    }
+  }
+}

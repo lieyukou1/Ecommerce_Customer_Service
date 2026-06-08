@@ -1,0 +1,130 @@
+# reduced_round03_repair_v1 Summary
+
+- source dataset: `reduced_round03_curated_v1`
+- purpose: reduce bucket tug-of-war before the next reduced round_03 retry
+
+| bucket | train | val |
+| --- | ---: | ---: |
+| `active_task_slot_fill` | 73 | 20 |
+| `ambiguous_all_null` | 60 | 20 |
+| `directive_exit_runtime` | 40 | 10 |
+| `task_interrupt_resume_cancel` | 74 | 20 |
+| `work_order_business_complaint` | 30 | 8 |
+| `work_order_business_urge` | 30 | 6 |
+
+- total_records: `391`
+- dropped_records: `20`
+- patched_records: `79`
+
+## Patch Actions
+
+- `dedup_global_user_message`: `18`
+- `dropped`: `20`
+- `forced_user_message_override`: `26`
+- `patched_active_context_slot_fill`: `27`
+- `patched_interrupt_resume_cancel`: `52`
+
+## Dropped IDs
+
+- `tp_ambiguous_all_null_train_006`
+- `tp_ambiguous_all_null_train_008`
+- `tp_ambiguous_all_null_train_010`
+- `tp_ambiguous_all_null_train_013`
+- `tp_ambiguous_all_null_train_016`
+- `tp_ambiguous_all_null_train_017`
+- `tp_ambiguous_all_null_train_019`
+- `tp_ambiguous_all_null_train_021`
+- `tp_ambiguous_all_null_train_029`
+- `tp_ambiguous_all_null_train_030`
+- `tp_ambiguous_all_null_train_032`
+- `tp_ambiguous_all_null_train_033`
+- `tp_r3_ambiguous_all_null_train_036`
+- `tp_r3_ambiguous_all_null_train_040`
+- `tp_r3_ambiguous_all_null_train_043`
+- `tp_r3_ambiguous_all_null_train_045`
+- `tp_r3_ambiguous_all_null_train_047`
+- `tp_r3_ambiguous_all_null_train_049`
+- `tp_r3_ambiguous_all_null_train_050`
+- `tp_r3_ambiguous_all_null_train_052`
+
+## Patched IDs
+
+- `tp_active_task_slot_fill_train_005`
+- `tp_active_task_slot_fill_train_006`
+- `tp_active_task_slot_fill_train_012`
+- `tp_active_task_slot_fill_train_013`
+- `tp_active_task_slot_fill_train_019`
+- `tp_active_task_slot_fill_train_020`
+- `tp_active_task_slot_fill_train_026`
+- `tp_active_task_slot_fill_train_027`
+- `tp_active_task_slot_fill_train_033`
+- `tp_active_task_slot_fill_train_034`
+- `tp_active_task_slot_fill_train_040`
+- `tp_active_task_slot_fill_train_041`
+- `tp_active_task_slot_fill_train_047`
+- `tp_active_task_slot_fill_train_048`
+- `tp_task_interrupt_resume_cancel_train_000`
+- `tp_task_interrupt_resume_cancel_train_001`
+- `tp_task_interrupt_resume_cancel_train_004`
+- `tp_task_interrupt_resume_cancel_train_005`
+- `tp_task_interrupt_resume_cancel_train_008`
+- `tp_task_interrupt_resume_cancel_train_009`
+- `tp_task_interrupt_resume_cancel_train_012`
+- `tp_task_interrupt_resume_cancel_train_013`
+- `tp_task_interrupt_resume_cancel_train_016`
+- `tp_task_interrupt_resume_cancel_train_017`
+- `tp_task_interrupt_resume_cancel_train_020`
+- `tp_task_interrupt_resume_cancel_train_021`
+- `tp_task_interrupt_resume_cancel_train_024`
+- `tp_task_interrupt_resume_cancel_train_025`
+- `tp_task_interrupt_resume_cancel_train_028`
+- `tp_task_interrupt_resume_cancel_train_029`
+- `tp_task_interrupt_resume_cancel_train_032`
+- `tp_task_interrupt_resume_cancel_train_033`
+- `tp_task_interrupt_resume_cancel_train_036`
+- `tp_task_interrupt_resume_cancel_train_037`
+- `tp_task_interrupt_resume_cancel_train_040`
+- `tp_task_interrupt_resume_cancel_train_041`
+- `tp_task_interrupt_resume_cancel_train_044`
+- `tp_r3_active_task_slot_fill_train_052`
+- `tp_r3_active_task_slot_fill_train_055`
+- `tp_r3_active_task_slot_fill_train_058`
+- `tp_r3_active_task_slot_fill_train_061`
+- `tp_r3_active_task_slot_fill_train_067`
+- `tp_r3_active_task_slot_fill_train_068`
+- `tp_r3_active_task_slot_fill_train_072`
+- `tp_r3_task_interrupt_resume_cancel_train_049`
+- `tp_r3_task_interrupt_resume_cancel_train_050`
+- `tp_r3_task_interrupt_resume_cancel_train_051`
+- `tp_r3_task_interrupt_resume_cancel_train_052`
+- `tp_r3_task_interrupt_resume_cancel_train_055`
+- `tp_r3_task_interrupt_resume_cancel_train_057`
+- `tp_r3_task_interrupt_resume_cancel_train_058`
+- `tp_r3_task_interrupt_resume_cancel_train_059`
+- `tp_r3_task_interrupt_resume_cancel_train_061`
+- `tp_r3_task_interrupt_resume_cancel_train_062`
+- `tp_r3_task_interrupt_resume_cancel_train_065`
+- `tp_r3_task_interrupt_resume_cancel_train_066`
+- `tp_r3_task_interrupt_resume_cancel_train_067`
+- `tp_r3_task_interrupt_resume_cancel_train_068`
+- `tp_r3_task_interrupt_resume_cancel_train_070`
+- `tp_r3_task_interrupt_resume_cancel_train_077`
+- `tp_r3_task_interrupt_resume_cancel_train_078`
+- `tp_r3_task_interrupt_resume_cancel_train_079`
+- `tp_active_task_slot_fill_val_000`
+- `tp_active_task_slot_fill_val_006`
+- `tp_active_task_slot_fill_val_007`
+- `tp_task_interrupt_resume_cancel_val_000`
+- `tp_task_interrupt_resume_cancel_val_001`
+- `tp_task_interrupt_resume_cancel_val_004`
+- `tp_task_interrupt_resume_cancel_val_005`
+- `tp_r3_active_task_slot_fill_val_010`
+- `tp_r3_active_task_slot_fill_val_011`
+- `tp_r3_active_task_slot_fill_val_016`
+- `tp_r3_task_interrupt_resume_cancel_val_007`
+- `tp_r3_task_interrupt_resume_cancel_val_008`
+- `tp_r3_task_interrupt_resume_cancel_val_010`
+- `tp_r3_task_interrupt_resume_cancel_val_013`
+- `tp_r3_task_interrupt_resume_cancel_val_014`
+- `tp_r3_task_interrupt_resume_cancel_val_015`
+- `tp_r3_task_interrupt_resume_cancel_val_017`

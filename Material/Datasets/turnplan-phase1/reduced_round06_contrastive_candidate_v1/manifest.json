@@ -1,0 +1,87 @@
+{
+  "dataset_id": "reduced_round06_contrastive_candidate_v1",
+  "source_dataset": "reduced_round04_candidate_v1",
+  "train_total": 249,
+  "val_total": 39,
+  "added_contrastive_train_records": 24,
+  "bucket_counts": {
+    "active_task_slot_fill": {
+      "train": 56,
+      "val": 10
+    },
+    "ambiguous_all_null": {
+      "train": 37,
+      "val": 6
+    },
+    "directive_exit_runtime": {
+      "train": 39,
+      "val": 6
+    },
+    "service_item_knowledge": {
+      "train": 6,
+      "val": 0
+    },
+    "task_interrupt_resume_cancel": {
+      "train": 49,
+      "val": 7
+    },
+    "work_order_business_complaint": {
+      "train": 32,
+      "val": 5
+    },
+    "work_order_business_urge": {
+      "train": 30,
+      "val": 5
+    }
+  },
+  "contrast_groups": {
+    "contrast_cancel_exit_01": [
+      "tp_contrast_cancel_task_train_001",
+      "tp_contrast_exit_runtime_train_001"
+    ],
+    "contrast_cancel_exit_02": [
+      "tp_contrast_cancel_task_train_002",
+      "tp_contrast_exit_runtime_train_002"
+    ],
+    "contrast_cancel_exit_03": [
+      "tp_contrast_cancel_task_train_003",
+      "tp_contrast_exit_runtime_train_003"
+    ],
+    "contrast_cancel_exit_04": [
+      "tp_contrast_cancel_task_train_004",
+      "tp_contrast_exit_runtime_train_004"
+    ],
+    "contrast_community_rule_01": [
+      "tp_contrast_community_rule_task_train_001",
+      "tp_contrast_community_rule_knowledge_train_001"
+    ],
+    "contrast_community_rule_02": [
+      "tp_contrast_community_rule_task_train_002",
+      "tp_contrast_community_rule_knowledge_train_002"
+    ],
+    "contrast_community_rule_03": [
+      "tp_contrast_community_rule_task_train_003",
+      "tp_contrast_community_rule_knowledge_train_003"
+    ],
+    "contrast_complaint_object_01": [
+      "tp_contrast_complaint_task_train_001",
+      "tp_contrast_complaint_all_null_train_001"
+    ],
+    "contrast_complaint_object_02": [
+      "tp_contrast_complaint_task_train_002",
+      "tp_contrast_complaint_all_null_train_002"
+    ],
+    "contrast_service_item_01": [
+      "tp_contrast_service_item_task_train_001",
+      "tp_contrast_service_item_knowledge_train_001"
+    ],
+    "contrast_service_item_02": [
+      "tp_contrast_service_item_task_train_002",
+      "tp_contrast_service_item_knowledge_train_002"
+    ],
+    "contrast_service_item_03": [
+      "tp_contrast_service_item_task_train_003",
+      "tp_contrast_service_item_knowledge_train_003"
+    ]
+  }
+}

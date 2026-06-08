@@ -1,0 +1,54 @@
+{
+  "dataset_id": "reduced_round03_base_v1",
+  "source_dataset": "turnplan-phase1/canonical_llm",
+  "gap_by_bucket": {
+    "ambiguous_all_null": {
+      "train_actual": 35,
+      "train_target": 80,
+      "train_gap": 45,
+      "val_actual": 6,
+      "val_target": 20,
+      "val_gap": 14
+    },
+    "active_task_slot_fill": {
+      "train_actual": 50,
+      "train_target": 80,
+      "train_gap": 30,
+      "val_actual": 10,
+      "val_target": 20,
+      "val_gap": 10
+    },
+    "task_interrupt_resume_cancel": {
+      "train_actual": 45,
+      "train_target": 80,
+      "train_gap": 35,
+      "val_actual": 7,
+      "val_target": 20,
+      "val_gap": 13
+    },
+    "directive_exit_runtime": {
+      "train_actual": 35,
+      "train_target": 40,
+      "train_gap": 5,
+      "val_actual": 6,
+      "val_target": 10,
+      "val_gap": 4
+    },
+    "work_order_business_urge": {
+      "train_actual": 30,
+      "train_target": 30,
+      "train_gap": 0,
+      "val_actual": 5,
+      "val_target": 8,
+      "val_gap": 3
+    },
+    "work_order_business_complaint": {
+      "train_actual": 30,
+      "train_target": 30,
+      "train_gap": 0,
+      "val_actual": 5,
+      "val_target": 8,
+      "val_gap": 3
+    }
+  }
+}

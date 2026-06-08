@@ -1,0 +1,80 @@
+{
+  "dataset_id": "reduced_round03_repair_v1",
+  "source_dataset": "reduced_round03_curated_v1",
+  "target_buckets": {
+    "ambiguous_all_null": {
+      "train": 80,
+      "val": 20
+    },
+    "active_task_slot_fill": {
+      "train": 80,
+      "val": 20
+    },
+    "task_interrupt_resume_cancel": {
+      "train": 80,
+      "val": 20
+    },
+    "directive_exit_runtime": {
+      "train": 40,
+      "val": 10
+    },
+    "work_order_business_urge": {
+      "train": 30,
+      "val": 8
+    },
+    "work_order_business_complaint": {
+      "train": 30,
+      "val": 8
+    }
+  },
+  "gap_by_bucket": {
+    "active_task_slot_fill": {
+      "train_actual": 73,
+      "train_target": 80,
+      "train_gap": 7,
+      "val_actual": 20,
+      "val_target": 20,
+      "val_gap": 0
+    },
+    "ambiguous_all_null": {
+      "train_actual": 60,
+      "train_target": 80,
+      "train_gap": 20,
+      "val_actual": 20,
+      "val_target": 20,
+      "val_gap": 0
+    },
+    "directive_exit_runtime": {
+      "train_actual": 40,
+      "train_target": 40,
+      "train_gap": 0,
+      "val_actual": 10,
+      "val_target": 10,
+      "val_gap": 0
+    },
+    "task_interrupt_resume_cancel": {
+      "train_actual": 74,
+      "train_target": 80,
+      "train_gap": 6,
+      "val_actual": 20,
+      "val_target": 20,
+      "val_gap": 0
+    },
+    "work_order_business_complaint": {
+      "train_actual": 30,
+      "train_target": 30,
+      "train_gap": 0,
+      "val_actual": 8,
+      "val_target": 8,
+      "val_gap": 0
+    },
+    "work_order_business_urge": {
+      "train_actual": 30,
+      "train_target": 30,
+      "train_gap": 0,
+      "val_actual": 6,
+      "val_target": 8,
+      "val_gap": 2
+    }
+  }
+}

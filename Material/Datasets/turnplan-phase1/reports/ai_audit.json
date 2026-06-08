@@ -1,0 +1,245 @@
+{
+  "train": {
+    "total_records": 450,
+    "unique_pairs": 450,
+    "duplicate_pairs": 0,
+    "duplicate_ratio": 0.0,
+    "bucket_counts": {
+      "chitchat": 40,
+      "directive_exit_runtime": 35,
+      "ambiguous_all_null": 35,
+      "service_item_knowledge": 55,
+      "work_order_read_only_task": 85,
+      "work_order_business_urge": 30,
+      "work_order_business_complaint": 30,
+      "active_task_slot_fill": 50,
+      "object_context_followup": 45,
+      "task_interrupt_resume_cancel": 45
+    },
+    "track_counts": {
+      "chitchat": 40,
+      "directive": 35,
+      "all_null": 35,
+      "knowledge": 100,
+      "task": 240
+    },
+    "flow_counts": {
+      "work_order_status_query": 15,
+      "service_progress_tracking": 14,
+      "service_item_detail_query": 14,
+      "resident_work_orders_list_query": 14,
+      "resident_service_items_list_query": 14,
+      "resident_rule_qa": 14,
+      "work_order_urge_submission": 53,
+      "complaint_request_submission": 41
+    },
+    "knowledge_intent_counts": {
+      "service_item_info": 20,
+      "work_order_info": 20,
+      "property_fee_rule": 10,
+      "renovation_filing_rule": 10,
+      "parking_rule": 10,
+      "pet_rule": 10,
+      "community_rule": 10,
+      "general_property_info": 10
+    },
+    "unique_histories": 103,
+    "history_length_distribution": {
+      "0": 162,
+      "2": 110,
+      "4": 97,
+      "6": 81
+    },
+    "conversation_state_distribution": {
+      "IDLE": 161,
+      "FOCUSED_KNOWLEDGE": 162,
+      "ACTIVE_TASK": 113,
+      "CLARIFYING": 7,
+      "TRANSITIONING": 7
+    },
+    "unique_user_messages": 434,
+    "repeated_user_messages": 16,
+    "unique_object_ids": 20,
+    "active_task_records": 113,
+    "active_system_task_records": 55,
+    "paused_task_records": 19,
+    "multi_slot_set_slots_records": 87,
+    "contact_phone_slot_records": 19,
+    "complaint_confirm_negative_records": 13,
+    "sft_ready_records": 374,
+    "sft_ready_pass_rate": 0.8311111111111111,
+    "language_naturalness_pass_rate": 0.8888888888888888,
+    "history_state_consistency_pass_rate": 0.9333333333333333,
+    "object_slot_consistency_pass_rate": 0.9933333333333333,
+    "state_alignment_pass_rate": 1.0,
+    "object_alignment_pass_rate": 0.9933333333333333,
+    "slot_alignment_pass_rate": 1.0,
+    "contract_flags": {
+      "mentions_intents_array": true,
+      "mentions_flow_field": true,
+      "mentions_active_system_task": true
+    }
+  },
+  "val": {
+    "total_records": 80,
+    "unique_pairs": 80,
+    "duplicate_pairs": 0,
+    "duplicate_ratio": 0.0,
+    "bucket_counts": {
+      "chitchat": 8,
+      "directive_exit_runtime": 6,
+      "ambiguous_all_null": 6,
+      "service_item_knowledge": 10,
+      "work_order_read_only_task": 16,
+      "work_order_business_urge": 5,
+      "work_order_business_complaint": 5,
+      "active_task_slot_fill": 10,
+      "object_context_followup": 7,
+      "task_interrupt_resume_cancel": 7
+    },
+    "track_counts": {
+      "chitchat": 8,
+      "directive": 6,
+      "all_null": 6,
+      "knowledge": 17,
+      "task": 43
+    },
+    "flow_counts": {
+      "work_order_status_query": 3,
+      "service_progress_tracking": 3,
+      "service_item_detail_query": 3,
+      "resident_work_orders_list_query": 3,
+      "resident_service_items_list_query": 2,
+      "resident_rule_qa": 2,
+      "work_order_urge_submission": 8,
+      "complaint_request_submission": 7
+    },
+    "knowledge_intent_counts": {
+      "service_item_info": 5,
+      "work_order_info": 4,
+      "property_fee_rule": 2,
+      "renovation_filing_rule": 2,
+      "parking_rule": 1,
+      "pet_rule": 1,
+      "community_rule": 1,
+      "general_property_info": 1
+    },
+    "unique_histories": 39,
+    "history_length_distribution": {
+      "4": 27,
+      "0": 23,
+      "2": 18,
+      "6": 12
+    },
+    "conversation_state_distribution": {
+      "IDLE": 27,
+      "ACTIVE_TASK": 20,
+      "FOCUSED_KNOWLEDGE": 31,
+      "CLARIFYING": 1,
+      "TRANSITIONING": 1
+    },
+    "unique_user_messages": 80,
+    "repeated_user_messages": 0,
+    "unique_object_ids": 18,
+    "active_task_records": 20,
+    "active_system_task_records": 11,
+    "paused_task_records": 3,
+    "multi_slot_set_slots_records": 15,
+    "contact_phone_slot_records": 4,
+    "complaint_confirm_negative_records": 2,
+    "sft_ready_records": 69,
+    "sft_ready_pass_rate": 0.8625,
+    "language_naturalness_pass_rate": 0.925,
+    "history_state_consistency_pass_rate": 0.9375,
+    "object_slot_consistency_pass_rate": 0.9875,
+    "state_alignment_pass_rate": 1.0,
+    "object_alignment_pass_rate": 0.9875,
+    "slot_alignment_pass_rate": 1.0,
+    "contract_flags": {
+      "mentions_intents_array": true,
+      "mentions_flow_field": true,
+      "mentions_active_system_task": true
+    }
+  },
+  "all": {
+    "total_records": 530,
+    "unique_pairs": 530,
+    "duplicate_pairs": 0,
+    "duplicate_ratio": 0.0,
+    "bucket_counts": {
+      "chitchat": 48,
+      "directive_exit_runtime": 41,
+      "ambiguous_all_null": 41,
+      "service_item_knowledge": 65,
+      "work_order_read_only_task": 101,
+      "work_order_business_urge": 35,
+      "work_order_business_complaint": 35,
+      "active_task_slot_fill": 60,
+      "object_context_followup": 52,
+      "task_interrupt_resume_cancel": 52
+    },
+    "track_counts": {
+      "chitchat": 48,
+      "directive": 41,
+      "all_null": 41,
+      "knowledge": 117,
+      "task": 283
+    },
+    "flow_counts": {
+      "work_order_status_query": 18,
+      "service_progress_tracking": 17,
+      "service_item_detail_query": 17,
+      "resident_work_orders_list_query": 17,
+      "resident_service_items_list_query": 16,
+      "resident_rule_qa": 16,
+      "work_order_urge_submission": 61,
+      "complaint_request_submission": 48
+    },
+    "knowledge_intent_counts": {
+      "service_item_info": 25,
+      "work_order_info": 24,
+      "property_fee_rule": 12,
+      "renovation_filing_rule": 12,
+      "parking_rule": 11,
+      "pet_rule": 11,
+      "community_rule": 11,
+      "general_property_info": 11
+    },
+    "unique_histories": 109,
+    "history_length_distribution": {
+      "0": 185,
+      "2": 128,
+      "4": 124,
+      "6": 93
+    },
+    "conversation_state_distribution": {
+      "IDLE": 188,
+      "FOCUSED_KNOWLEDGE": 193,
+      "ACTIVE_TASK": 133,
+      "CLARIFYING": 8,
+      "TRANSITIONING": 8
+    },
+    "unique_user_messages": 511,
+    "repeated_user_messages": 19,
+    "unique_object_ids": 20,
+    "active_task_records": 133,
+    "active_system_task_records": 66,
+    "paused_task_records": 22,
+    "multi_slot_set_slots_records": 102,
+    "contact_phone_slot_records": 23,
+    "complaint_confirm_negative_records": 15,
+    "sft_ready_records": 443,
+    "sft_ready_pass_rate": 0.8358490566037736,
+    "language_naturalness_pass_rate": 0.8943396226415095,
+    "history_state_consistency_pass_rate": 0.9339622641509434,
+    "object_slot_consistency_pass_rate": 0.9924528301886792,
+    "state_alignment_pass_rate": 1.0,
+    "object_alignment_pass_rate": 0.9924528301886792,
+    "slot_alignment_pass_rate": 1.0,
+    "contract_flags": {
+      "mentions_intents_array": true,
+      "mentions_flow_field": true,
+      "mentions_active_system_task": true
+    }
+  }
+}

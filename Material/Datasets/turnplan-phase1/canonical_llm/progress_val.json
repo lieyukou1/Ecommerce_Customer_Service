@@ -1,0 +1,7 @@
+{
+  "output_path": "D:\\Desktop\\SGG_Project\\Ecommerce_Customer_Service\\Material\\Datasets\\turnplan-phase1\\canonical_llm\\records_val.jsonl",
+  "selected_records": 80,
+  "completed_records": 80,
+  "pending_records": 0,
+  "last_completed_id": "tp_task_interrupt_resume_cancel_val_006"
+}

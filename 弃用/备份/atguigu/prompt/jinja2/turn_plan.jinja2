@@ -1,0 +1,157 @@
+## 任务说明
+你的任务是分析当前对话上下文，并生成一个 TurnPlan JSON。
+
+TurnPlan 顶层只允许以下三个字段：
+- `task`
+- `knowledge`
+- `chitchat`
+
+规则：
+- 这三个字段的值必须是 JSON 对象或 `null`
+- 请根据住户当前这轮表达的真实意图生成结果
+- 如果住户同时表达了多个意图，可以同时填写多个轨道
+- 后续执行引擎一次只会优先处理一条轨道；如果你输出多个轨道，系统会再向住户澄清先处理哪一项
+- 不要输出额外字段
+- 只输出合法 JSON，不要输出 markdown
+- 最终答案只能是 JSON 文本本身，不要使用 Markdown 代码块包裹
+
+当前项目是物业智能管家，不是电商客服。
+你要优先使用物业语义，而不是订单/商品/退款/发货等电商语义。
+
+项目中的核心业务对象与字段口径如下：
+- 住户：`resident`
+- 工单：`work_order`
+- 服务项目：`service_item`
+- 工单主键字段：`work_order_id`
+- 服务项目主键字段：`service_item_id`
+- 当前会话身份字段：`resident_id`
+
+如果页面对象消息里已经给出了以下对象，应该优先复用：
+- `type = "work_order"`：表示当前焦点对象是工单
+- `type = "service_item"`：表示当前焦点对象是服务项目
+
+当焦点对象是工单时，常见可直接利用的字段包括：
+- `work_order_id`
+- `status`
+- `amount`
+- `created_at`
+- `appointment_time`
+- `summary`
+
+当焦点对象是服务项目时，常见可直接利用的字段包括：
+- `service_item_id`
+- `price`
+- `description`
+- `service_status`
+
+---
+
+## Task 结构
+当住户是在办理业务、追问处理进度、提交催办/投诉、围绕某个工单或服务项目继续操作时，填写 `task`。
+
+只有在以下情况之一成立时，才允许输出 `task`：
+- 用户明确表达了具体业务方向，例如查询状态、查询进度、咨询服务项目详情、催办、投诉、规则咨询、转人工
+- 焦点对象或当前状态已经提供了足够上下文，并且用户这句话足以唯一确定要进入哪一个业务 flow
+
+如果用户只是表达模糊办理意愿，例如：
+- “我要提交那个”
+- “帮我处理一下”
+- “这个给我办一下”
+- “我想办这个”
+
+但没有明确说明具体要查什么、办什么、催什么、投诉什么，则不要猜测具体 flow。
+这类情况应保留 `task = null`；如果也不属于知识咨询或闲聊，则三个字段都保持 `null`，让系统后续进入澄清。
+
+Task 对象示例：
+{
+  "commands": [
+    {"command": "start_flow", "flow": "<flow_id>"},
+    {"command": "resume_flow", "flow": "<flow_id>"},
+    {"command": "cancel_flow"},
+    {"command": "set_slots", "slots": {"<slot_name>": "<value>"}}
+  ]
+}
+
+仅允许以下 task commands：
+- `start_flow`
+- `resume_flow`
+- `cancel_flow`
+- `set_slots`
+
+槽位填写规则：
+- 如果住户消息或焦点对象已经明确给出 `work_order_id` / `service_item_id`，优先通过 `set_slots` 写入，不要重复向住户追问
+- 如果住户是在追问“这个工单现在什么状态”“处理到哪了”，并且焦点对象已经是工单，应优先围绕该工单启动对应 flow
+- 如果住户是在询问服务项目价格、说明、办理状态，并且焦点对象已经是服务项目，应优先围绕该服务项目启动对应 flow
+- 如果住户明确表示取消当前办理流程，可以输出 `cancel_flow`
+- 如果住户明显是在继续之前中断的物业业务流程，可以输出 `resume_flow`
+- 如果用户没有明确业务方向，不要仅凭“提交”“处理”“弄一下”“这个”之类模糊措辞直接输出 `start_flow`
+- 如果住户是在表达“退出当前上下文 / 取消当前对象追问 / 重新开始”，例如“取消”“退出”“清空状态”“重新开始”，不要强行输出 `task` / `knowledge` / `chitchat`，保持三个字段为 `null`，让系统层处理统一退出机制
+
+可用 flows：
+{{ available_flows_json }}
+
+---
+
+## Knowledge 结构
+当住户是在咨询信息、规则说明、制度解释、办理条件、物业规范等非当前业务执行型问题时，填写 `knowledge`。
+
+Knowledge 对象示例：
+{
+  "intents": ["<intent>"]
+}
+
+允许的 intent：
+{{ knowledge_intents_json }}
+
+知识类问题示例：
+- 物业费怎么交
+- 装修报备规则是什么
+- 停车规则怎么规定
+- 宠物管理要求是什么
+
+---
+
+## Chitchat 结构
+当住户是在寒暄、闲聊、表达情绪，或当前消息没有形成明确业务/知识意图时，填写 `chitchat`。
+
+注意：
+- 纯寒暄、闲聊、情绪表达，例如“你好”“今天天气不错”“你是谁”，应输出 `chitchat`
+- 模糊业务表达不属于 `chitchat`；如果看起来像想办业务但又没说清楚具体方向，不要输出 `chitchat`，而应保持相关字段为 `null` 以便后续澄清
+
+Chitchat 对象示例：
+{}
+
+---
+
+## 当前状态
+### Active Task
+{{ active_task_json }}
+
+### Interrupted Tasks
+{{ interrupted_tasks_json }}
+
+### Focused Object
+{{ focused_object_json }}
+
+---
+
+## 对话历史
+{{ current_conversation }}
+
+---
+
+## 当前任务
+请根据住户最后一句话生成 TurnPlan：
+"""{{ user_message }}"""
+
+TurnPlan 只允许输出以下形状：
+
+{
+  "task": null,
+  "knowledge": null,
+  "chitchat": null
+}
+
+请根据住户真实意图，把对应字段替换成对象；没有命中的字段保持 `null`。
+不要输出解释，不要使用 markdown 代码块。
+你的 TurnPlan：
